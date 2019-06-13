@@ -13,6 +13,7 @@ function App() {
             <img src={logo} className="App-logo" alt="logo" />
             <img src={logo} className="App-logo" alt="logo" />
             <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" />
         </header>
 
         <section>
