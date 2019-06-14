@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import logo from './aquaqlogo.jpeg';
 import BarChart from "./Barchart";
-
+import Grid from "./GRid";
 function App() {
 
   return (
@@ -11,9 +11,7 @@ function App() {
 
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <img src={logo} className="App-logo" alt="logo" />
-            <img src={logo} className="App-logo" alt="logo" />
-            <img src={logo} className="App-logo" alt="logo" />
+
         </header>
 
         <section>
@@ -63,7 +61,7 @@ function App() {
 
         </table>
 
-
+        <Grid width={'30'} height={'10'}/>
 
 
     </div>
