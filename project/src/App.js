@@ -2,67 +2,34 @@ import React from 'react';
 import './App.css';
 import logo from './aquaqlogo.jpeg';
 import BarChart from "./Barchart";
+
 import Grid from "./GRid";
+
+import { Button } from 'reactstrap';
+import { TypeChooser } from "react-stockcharts/lib/helper";
+
+import AreaChart from './Chart';
+
 function App() {
 
   return (
 
     <div className="App">
 
-        <header className="App-header">
+        <header>
             <img src={logo} className="App-logo" alt="logo" />
-
         </header>
 
-        <section>
+        <Button>Btn 1</Button>
+        <Button>Btn 2</Button>
 
-            <nav>
-                <div className="btn-group">
-                    <button>RDB</button>
-                    <button>HDB</button>
-                </div>
-            </nav>
+        <AreaChart  />
 
-            <table>
+        {/*<BarChart color={'green'} width={'1050'}/>*/}
+        {/*<BarChart color={'blue'} width={'600'}/>*/}
+        {/*<BarChart color={'red'} width={'600'}/>*/}
 
-                <tr>
-                    <button>BTN1</button>
-                    <button>BTN2</button>
-                </tr>
-
-                <tr>
-                    <td>
-                        Graph 1
-                    </td>
-
-                    <td rowSpan="2">
-                        Right column
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        Graph 2
-                    </td>
-                </tr>
-
-            </table>
-        </section>
-
-        <table>
-
-            <tg>
-                <BarChart color={'green'} width={'700'}/>
-            </tg>
-
-            <tg>
-                <BarChart color={'blue'} width={'900'}/>
-            </tg>
-
-        </table>
-
-        <Grid width={'30'} height={'10'}/>
-
+        <Grid />
 
     </div>
   );
