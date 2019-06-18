@@ -10,6 +10,11 @@ import { TypeChooser } from "react-stockcharts/lib/helper";
 
 import AreaChart from './Chart';
 
+import { render } from "react-dom";
+
+import Tabs from './Tabs';
+require('./index.css');
+
 function App() {
 
   return (
@@ -20,19 +25,30 @@ function App() {
             <img src={logo} className="App-logo" alt="logo" />
         </header>
 
-        <Button>Btn 1</Button>
-        <Button>Btn 2</Button>
+        {/*<Button>Btn 1</Button>*/}
+        {/*<Button>Btn 2</Button>*/}
 
-        <AreaChart  />
+        <Tabs>
+            <div label="RDB">
+                <AreaChart  />
+                <Grid />
+            </div>
+            <div label="HDB">
+                <Grid />
+            </div>
+        </Tabs>
 
         {/*<BarChart color={'green'} width={'1050'}/>*/}
         {/*<BarChart color={'blue'} width={'600'}/>*/}
         {/*<BarChart color={'red'} width={'600'}/>*/}
 
-        <Grid />
-
     </div>
   );
 }
+
+{/*  */}
+{/*const container = document.createElement('div');*/}
+{/*document.body.appendChild(container);*/}
+{/*render(<App />, container);*/}
 
 export default App;
