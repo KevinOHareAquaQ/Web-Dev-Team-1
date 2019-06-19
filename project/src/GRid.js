@@ -40,7 +40,10 @@ class Grid extends Component {
                 className="ag-theme-blue"
                 style={{
                     height: '250px',
-                    width: '400px' }}
+                    width: '400px' ,
+                    position: "relative",
+                    left :300
+                }}
             >
                 <AgGridReact
                     columnDefs={this.state.columnDefs}

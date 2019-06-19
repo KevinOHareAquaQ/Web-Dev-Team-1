@@ -11,6 +11,7 @@ import { fitWidth } from "react-stockcharts/lib/helper";
 import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
 import{getData} from "./utils";
 
+
 const canvasGradient = createVerticalLinearGradient([
     { stop: 0, color: hexToRGBA("#b5d0ff", 0.2) },
     { stop: 0.7, color: hexToRGBA("#6fa4fc", 0.4) },
@@ -25,7 +26,8 @@ class AreaChart extends React.Component {
     }
 
     render() {
-        getData().then(data => {
+
+        getData(this.props.sym).then(data => {
             this.setState({'data': data});
         });
         if (this.state.data === null || this.state.data.length==0) {

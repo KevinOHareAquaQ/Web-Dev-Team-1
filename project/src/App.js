@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './DropDown.css'
 import logo from './aquaqlogo.jpeg';
 import BarChart from "./Barchart";
 
@@ -9,6 +10,7 @@ import { Button } from 'reactstrap';
 import { TypeChooser } from "react-stockcharts/lib/helper";
 
 import AreaChart from './Chart';
+import DropDown from './DropDown';
 
 import { render } from "react-dom";
 
@@ -28,12 +30,17 @@ function App() {
         {/*<Button>Btn 1</Button>*/}
         {/*<Button>Btn 2</Button>*/}
 
+
+
         <Tabs>
             <div label="RDB">
-                <AreaChart  />
+                <AreaChart sym={"MSFT"}/>
+                <DropDown/>
                 <Grid />
             </div>
             <div label="HDB">
+                <AreaChart sym={"AAPL"}/>
+                <DropDown/>
                 <Grid />
             </div>
         </Tabs>
