@@ -42,7 +42,7 @@ li:hover {
     height:18px;
     background-color: #238c1b;
     padding:12px;
-    border-radius:5px;
+    border-radius:0px;
     font-weight:bold;
     color:white;
 }

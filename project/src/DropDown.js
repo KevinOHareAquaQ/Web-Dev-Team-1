@@ -36,11 +36,14 @@ class DropDown extends Component {
 
                     (
                         <ul>
-                            <li><a className="active" href="#MSFT">MSFT</a></li>
-                            <li><a href="#APPL">APPL</a></li>
+                            <li><a className="active" href="#window.alert(this)">MSFT</a></li>
+                            <li><a href="#window.alert(hello)">APPL</a></li>
+
                         </ul>
                     )
                     :
+
+
                     (
                         null
                     )

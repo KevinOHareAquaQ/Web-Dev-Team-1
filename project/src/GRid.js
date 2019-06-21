@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {AgGridReact} from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-blue.css';
+import axios from 'axios';
 
 class Grid extends Component {
 
@@ -9,47 +10,69 @@ class Grid extends Component {
         super(props);
         this.state = {
             columnDefs: [{
-                headerName: "Sym", field: "sym",sortable:true,filter:true
+                headerName: "SYM", field: "sym",sortable:true,filter:true
             }, {
-                headerName: "Price", field: "price",sortable:true,filter:true
-            },],
-            rowData: [{
-                sym: "DOW", price: 28
+                headerName: "MIN", field: "price",sortable:true,filter:true
             }, {
-                sym: "AMD",  price: 39
+                headerName: "MAX", field: "price",sortable:true,filter:true
             }, {
-                sym: "DELL", price: 73
-            }, {
-                sym:"AIG", price: 89
-            }, {
-                sym:"MSFT", price: 42
-            },{
-                sym:"GOOG", price: 28
-            }, {
-                sym:"AAPL", price: 21
-            }, {
-                sym:"IBM", price: 18
+                headerName: "LVC", field: "price",sortable:true,filter:true
             },
-            ]
+
+            ],
+            rowData: []
         }
+        this.updateData();
     }
+
+    options = {
+        url: 'https://localhost:3200/executeQuery',
+        auth: {
+            username: 'user',
+            password: 'pass',
+        },
+
+        method: 'post',
+        dataType: 'json',
+        headers:
+            {
+                'Content-Type' : 'application/json',
+                'Accept' : 'application/json',
+                'Authorization' : 'BASIC dXNlcjpwYXNz'
+            }
+    };
+
+    getData(query) {
+        this.options['data'] = { 'query': query, 'response': 'true', 'type': 'sync'};
+        return axios(this.options)
+            .then(response => response.data);
+    }
+
+    updateData() {
+        this.getData("select price:count i by sym from trade")
+            .then(data => {
+                if (data.success) {
+                    console.log("data success=true");
+                    this.setState({rowData: data.result});
+                }
+            });
+    }
+
+    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);}
 
     render(){
         return (
             <div
                 className="ag-theme-blue"
                 style={{
-                    height: '250px',
-                    width: '400px' ,
-                    position: "relative",
-                    left :300
-                }}
+                    height: '200px',
+                    width: '800px' }}
             >
                 <AgGridReact
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}>
                 </AgGridReact>
-            >
+                >
             </div>
         );
     }
