@@ -17,6 +17,7 @@ import { render } from "react-dom";
 
 import Tabs from './Tabs';
 import DropMenu from "./AnotherDrop";
+import LiveChart from "./Livechart";
 require('./index.css');
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Tabs>
             <div label="RDB">
                 <DropMenu/>
+                <LiveChart />
                 <Grid />
             </div>
             <div label="HDB">
