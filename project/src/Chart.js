@@ -51,7 +51,7 @@ class AreaChart extends React.Component {
     
     updateData() {
         const Sym_Name=this.props.sym;
-        this.getData("select x:`int$`second$time,y:price from trade where sym=`"+Sym_Name)
+        this.getData("select x:time,y:price from trade where sym=`"+Sym_Name)
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
