@@ -1,59 +1,47 @@
-import React,{Component}from 'react';
+import React, { Component } from 'react'
+import Dropdown from 'react-dropdown'
+import AreaChart from "./Chart";
 
-class DropDown extends Component {
-    constructor(){
-        super();
+const options = [
+    'AAPL', 'AIG', 'AMD','DELL','DOW','GOOG','HPQ','IBM','INTC','MSFT'
+]
 
-        this.state ={
-            displayMenu: false,
-        };
-
-        this.showDropdownMenu = this.showDropdownMenu.bind(this);
-        this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
-
-        };
-
-    showDropdownMenu(event) {
-        event.preventDefault();
-        this.setState({ displayMenu: true }, () => {
-            document.addEventListener('click', this.hideDropdownMenu);
-        });
-    }
-
-    hideDropdownMenu() {
-        this.setState({ displayMenu: false }, () => {
-            document.removeEventListener('click', this.hideDropdownMenu);
-        });
+class DropMenu extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            selected: 'AAPL'
+        }
+        this._onSelect = this._onSelect.bind(this)
 
     }
 
-    render() {
+    _onSelect (option) {
+        console.log('You selected ', option.label)
+        this.setState({selected: option})
+    }
+
+    render () {
+        const defaultOption = this.state.selected
+        const Sym_name = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.label
+
         return (
-            <div  className="dropdown" style = {{background:"red",width:"200px",position:"relative",left :1000,top:-350}} >
-                <div className="button" onClick={this.showDropdownMenu}> Select Sym </div>
 
-                { this.state.displayMenu ?
+            <section>
+                <h3>Select Symbol </h3>
+                <Dropdown options={options} onChange={this._onSelect} value={defaultOption} Message="Select  sym" />
+                <div className='result'>
+                    Current Sym is
+                    <strong> {Sym_name} </strong>
+                </div>
 
-                    (
-                        <ul>
-                            <li><a className="active" href="#window.alert(this)">MSFT</a></li>
-                            <li><a href="#window.alert(hello)">APPL</a></li>
+                <div label="chart">
+                    <AreaChart sym={Sym_name}/>
+                </div>
 
-                        </ul>
-                    )
-                    :
-
-
-                    (
-                        null
-                    )
-                }
-
-            </div>
-
-        );
+               </section>
+        )
     }
 }
 
-
-export default DropDown;
+export default DropMenu

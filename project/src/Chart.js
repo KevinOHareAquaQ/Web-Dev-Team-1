@@ -1,27 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import { scaleTime, scaleLinear } from "d3-scale";
+import { scaleTime} from "d3-scale";
 import { curveMonotoneX } from "d3-shape";
-
 import { ChartCanvas, Chart } from "react-stockcharts";
 import { AreaSeries } from "react-stockcharts/lib/series";
 import { XAxis, YAxis } from "react-stockcharts/lib/axes";
 import { fitWidth } from "react-stockcharts/lib/helper";
 import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
-import{getData} from "./utils";
 import axios from 'axios';
 import { LineSeries } from "react-stockcharts/lib/series";
-import * as d3 from "d3"; 
-
-
 
 const canvasGradient = createVerticalLinearGradient([
     { stop: 0, color: hexToRGBA("#b5d0ff", 0.2) },
     { stop: 0.7, color: hexToRGBA("#6fa4fc", 0.4) },
     { stop: 1, color: hexToRGBA("#4286f4", 0.8) },
 ]);
-
 
 class AreaChart extends React.Component {
 
@@ -57,7 +50,8 @@ class AreaChart extends React.Component {
     };
     
     updateData() {
-        this.getData("select x:time,y:price from trade where sym=`AAPL")
+        const Sym_Name=this.props.sym;
+        this.getData("select x:`int$`second$time,y:price from trade where sym=`"+Sym_Name)
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
