@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LineChart from 'react-linechart';
 import '../node_modules/react-linechart/dist/styles.css';
 import axios from 'axios';
+import { timeParse } from "d3-time-format";
 
 export default class LiveChart extends Component {
 constructor(props) {
@@ -9,7 +10,7 @@ constructor(props) {
         this.state = {
             rowData: []
         }
-        this.updateData();
+       this.updateData();
     }
 
     options = {
@@ -40,11 +41,21 @@ constructor(props) {
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
+                    this.parseTimes(data.result);
                     this.setState({rowData: data.result});
                 }
             });
     }
     
+    parseTimes(data) {
+        const parseTime = timeParse("%H:%M:%S");
+        var i = 0;
+        for (i; i < data.length ; i++) {
+ //         data[i].x = d3.time.format('%b %d')(new Date(data[i].x));
+        }
+        return data;
+       };
+
     componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 1000);}
 
     render() {
@@ -59,8 +70,8 @@ constructor(props) {
                 <div className="App">
                     <h1>WAVG by Sym</h1>
                     <LineChart
-                        xLabel={"Sym count"}
-                        yLabel={"Sym"}
+                        xLabel={"Time"}
+                        yLabel={"Count"}
                         width={600}
                         height={400}
                         data={data}

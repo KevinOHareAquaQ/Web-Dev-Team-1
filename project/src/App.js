@@ -8,16 +8,11 @@ import 'react-dropdown/style.css'
 
 import Grid from "./GRid";
 
-import { TypeChooser } from "react-stockcharts/lib/helper";
-
-import AreaChart from './Chart';
-import DropDown from './DropDown';
-
 import { render } from "react-dom";
 
 import Tabs from './Tabs';
 import DropMenu from "./AnotherDrop";
-import LiveChart from "./Livechart";
+
 require('./index.css');
 
 function App() {
@@ -33,11 +28,9 @@ function App() {
         <Tabs>
             <div label="RDB">
                 <DropMenu/>
-                <LiveChart />
                 <Grid />
             </div>
             <div label="HDB">
-                <DropMenu/>
                 <Grid />
             </div>
         </Tabs>
