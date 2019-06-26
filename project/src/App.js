@@ -6,9 +6,12 @@ import 'react-dropdown/style.css'
 import Grid from "./Grid";
 import Tabs from './Tabs';
 import DropMenu from "./DropDown";
+import DropMenuHDB from "./DropDownHDB";
 import Maxvolchart from "./Maxvolchart";
 import HDBGrid from "./hdbweekmaxmin";
 import HDBGrid2 from "./hdbweeksym";
+import HDBCOUNTSWEEK from "./hdbweekcountsgraph";
+//import BarChart from "./Barchart";
 
 require('./index.css');
 
@@ -29,10 +32,14 @@ function App() {
                 <Maxvolchart />
             </div>
             <div label="HDB">
+            <h1>Sym Volatility by date (select start and end time)</h1>
+            <DropMenuHDB/>
             <h1>Max volume traded per day (previous week)</h1>
             <HDBGrid />
             <h1>Volume traded per sym (previous week)</h1>
             <HDBGrid2 />
+            <h1>   Total volume traded per day (previous week)</h1>
+            <HDBCOUNTSWEEK />
             </div>
         </Tabs>
     </div>

@@ -54,13 +54,14 @@ class HDBGrid2 extends Component {
             });
     }
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);}
-
     render(){
         return (
             <div
                 className="ag-theme-blue"
                 style={{
+                    paddingTop: '50px',
+                    paddingBottom: '50px',
+                    paddingLeft: '100px',
                     height: '282px',
                     width: '404px' }}
             >
@@ -68,7 +69,6 @@ class HDBGrid2 extends Component {
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}>
                 </AgGridReact>
-                >
             </div>
         );
     }

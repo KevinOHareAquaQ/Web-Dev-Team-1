@@ -58,13 +58,14 @@ class HDBGrid extends Component {
             });
     }
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);}
-
     render(){
         return (
             <div
                 className="ag-theme-blue"
                 style={{
+                    paddingTop: '50px',
+                    paddingBottom: '50px',
+                    paddingLeft: '100px',
                     height: '55px',
                     width: '802px' }}
             >

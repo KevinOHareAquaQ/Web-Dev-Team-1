@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
-import {AgGridReact} from 'ag-grid-react';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-blue.css';
+import { scalePoint } from  "d3-scale";
+import React from "react";
+import PropTypes from "prop-types";
+
+import { ChartCanvas, Chart } from "react-stockcharts";
+import { BarSeries } from "react-stockcharts/lib/series";
+import { XAxis, YAxis } from "react-stockcharts/lib/axes";
+import { fitWidth } from "react-stockcharts/lib/helper";
 import axios from 'axios';
 
-class Maxvolchart extends Component {
+class BarChart extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            columnDefs: [{
-                headerName: "SYM", field: "sym",sortable:true,filter:true
-            }, {
-                headerName: "MAX VOL", field: "size",sortable:true,filter:true
-            },
-            ],
             rowData: []
         }
         this.updateData();
@@ -44,7 +42,7 @@ class Maxvolchart extends Component {
     }
 
     updateData() {
-        this.getData("-1#asc select sum size by sym from trade")
+        this.getData("0!select y:`int$count i by x:string sym from trade")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -55,24 +53,36 @@ class Maxvolchart extends Component {
 
     componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);}
 
-    render(){
-        return (
-            <div
-                className="ag-theme-blue"
-                style={{
-                    paddingBottom: '50px',
-                    paddingLeft: '100px',
-                    height: '55px',
-                    width: '402px' }}
-            >
-                <AgGridReact
-                    columnDefs={this.state.columnDefs}
-                    rowData={this.state.rowData}>
-                </AgGridReact>
-                
-            </div>
-        );
-    }
+	render() {
+
+		return (
+			<ChartCanvas
+				width={800}
+				height={400}
+				margin={{ left: 80, right: 10, top: 20, bottom: 30 }}
+				seriesName="Fruits"
+				xExtents={list => list.map(d => d.x)}
+				data={this.state.rowData}
+				xAccessor={d => d.x}
+//				xScale={scalePoint()}
+				padding={1}
+			>
+				<Chart id={1} yExtents={d => [0, d.y]}>
+					<XAxis axisAt="bottom" orient="bottom" />
+					<YAxis axisAt="left" orient="left" />
+					<BarSeries yAccessor={d => d.y} />
+				</Chart>
+			</ChartCanvas>
+
+		);
+	}
 }
 
-export default Maxvolchart;
+
+BarChart.defaultProps = {
+	type: "svg",
+};
+
+BarChart = fitWidth(BarChart);
+
+export default BarChart;
