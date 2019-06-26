@@ -76,6 +76,8 @@ class Grid extends Component {
             <div
                 className="ag-theme-blue"
                 style={{
+                    paddingTop: '50px',
+                    paddingLeft: '100px',
                     height: '200px',
                     width: '825px' }}
             >
