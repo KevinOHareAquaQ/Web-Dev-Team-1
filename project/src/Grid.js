@@ -20,9 +20,9 @@ class Grid extends Component {
                     var colour = params.node.data.colour;
                     console.log({"params": params, "data": params.data, "colour": colour});
                     if (colour == "red") {
-                        var bGroundClr = '#FE5F5F'
+                        var bGroundClr = '#FEC4C4'
                     } else if (colour == "green") {
-                        bGroundClr = '#61FE80'
+                        bGroundClr = '#C6FEC4'
                     }
                     return {background: bGroundClr}
                 }
@@ -60,7 +60,7 @@ class Grid extends Component {
     }
 
     updateData() {
-        this.getData("?[`trade;();(enlist `sym)!enlist `sym;`maxprice`minprice`lvc!((max;`price);(min;`price);(last;`price))],'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec -2#price by sym from trade)")
+        this.getData("?[`trade;();(enlist `sym)!enlist `sym;`maxprice`minprice`lvc!(((`.Q.f;2);(max;(avgs,`price)));((`.Q.f;2);(min;(avgs,`price)));((`.Q.f;2);(last;(avgs,`price))))],'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec -2#price by sym from trade)")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -78,14 +78,15 @@ class Grid extends Component {
                 style={{
                     paddingTop: '50px',
                     paddingLeft: '100px',
-                    height: '200px',
-                    width: '825px' }}
+                    height: '277px',
+                    width: '802px',
+                    }}
             >
                 <AgGridReact
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}>
                 </AgGridReact>
-                >
+
             </div>
         );
     }
