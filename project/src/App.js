@@ -11,6 +11,7 @@ import Maxvolchart from "./Maxvolchart";
 import HDBGrid from "./hdbweekmaxmin";
 import HDBGrid2 from "./hdbweeksym";
 import HDBCOUNTSWEEK from "./hdbweekcountsgraph";
+import Grid_Button from "./Button";
 //import BarChart from "./Barchart";
 
 require('./index.css');
@@ -26,12 +27,14 @@ function App() {
             <div label="RDB">
             <h1>Price (Running average)</h1>
                 <DropMenu/>
+
                 <h1>Min price/Max price/LVC per sym</h1>
                 <Grid />
                 <h1>Highest traded sym by vol</h1>
                 <Maxvolchart />
             </div>
             <div label="HDB">
+                <Grid_Button/>
             <h1>Sym Volatility by date (select start and end time)</h1>
             <DropMenuHDB/>
             <h1>Max volume traded per day (previous week)</h1>
@@ -42,6 +45,8 @@ function App() {
             <HDBCOUNTSWEEK />
             </div>
         </Tabs>
+
+
     </div>
   );
 
