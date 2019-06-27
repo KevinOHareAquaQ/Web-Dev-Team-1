@@ -60,7 +60,7 @@ class Grid extends Component {
     }
 
     updateData() {
-        this.getData("?[`trade;();(enlist `sym)!enlist `sym;`maxprice`minprice`lvc!(((`.Q.f;2);(max;(avgs,`price)));((`.Q.f;2);(min;(avgs,`price)));((`.Q.f;2);(last;(avgs,`price))))],'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec -2#price by sym from trade)")
+        this.getData("?[`trade;();(enlist `sym)!enlist `sym;`maxprice`minprice`lvc!(((`.Q.f;4);(max;(avgs,`price)));((`.Q.f;4);(min;(avgs,`price)));((`.Q.f;4);(last;(avgs,`price))))],'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec -2#price by sym from trade)")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");

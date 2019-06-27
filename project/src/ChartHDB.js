@@ -63,8 +63,7 @@ class AreaChartHDB extends React.Component {
     updateData() {
         const Sym_Name=this.props.sym;
         const startdate=this.props.startdate;
-        const enddate=this.props.enddate;
-        this.getData("{[sym;window;sd;ed] ?[`trade;((within;`date;(enlist;sd;ed));(=;`sym;enlist sym));0b;`x`y!(`time;(mdev;window;`price))]}[`"+Sym_Name+";1000;"+startdate+";"+enddate+"]")
+        this.getData("{[sym;window;sd;ed] ?[`trade;((within;`date;(enlist;sd;ed));(=;`sym;enlist sym));0b;`x`y!(`time;(mdev;window;`price))]}[`"+Sym_Name+";1000;"+startdate+";.z.d]")
 //            this.getData("select x:time,y:price from trade where sym=`"+Sym_Name)
             .then(data => {
                 if (data.success) {

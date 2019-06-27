@@ -32,7 +32,8 @@ class AreaChart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            rowData: []
+            rowData: [],
+            sym:this.props.sym
         }
        this.updateData();
     }
@@ -72,7 +73,7 @@ class AreaChart extends React.Component {
             });
     };
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 3000);};
+    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 10000);};
     parseTimes(data) {
         //const parseTime = timeParse("%H:%M:%S");
         var i = 0;
