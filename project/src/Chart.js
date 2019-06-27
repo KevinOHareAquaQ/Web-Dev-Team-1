@@ -62,7 +62,8 @@ class AreaChart extends React.Component {
     
     updateData() {
         const Sym_Name=this.props.sym;
-        this.getData("select x:time,y:price from trade where sym=`"+Sym_Name)
+        //this.getData("select x:time,y:avgs price,open:(-2#avgs price)[0],close:last avgs price,volume:size from trade where sym=`"+Sym_Name)
+        this.getData("select x:time,y:avgs price from trade where sym=`"+Sym_Name)
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -117,8 +118,8 @@ class AreaChart extends React.Component {
                             orient="bottom"
                             displayFormat={timeFormat("%H:%M")} />
                         <MouseCoordinateY
-                            at="right"
-                            orient="right"
+                            at="left"
+                            orient="left"
                             displayFormat={format(".2f")} />
 
                         <AreaSeries
@@ -146,11 +147,11 @@ class AreaChart extends React.Component {
                            yExtents={d => d.volume}
                            height={150} origin={(w, h) => [0, h - 150]}
                     >
-                        <YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
+                        <YAxis axisAt="right" orient="right" ticks={5} tickFormat={format(".2s")}/>
 
                         <MouseCoordinateY
-                            at="left"
-                            orient="left"
+                            at="right"
+                            orient="right"
                             displayFormat={format(".4s")} />
 
                         <BarSeries yAccessor={d => d.volume}

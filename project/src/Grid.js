@@ -19,9 +19,9 @@ class Grid extends Component {
                 headerName: "LVC", field: "lvc",sortable:true,filter:true, cellClass: "lvcClass", cellStyle: function(params) {
                     var colour = params.node.data.colour;
                     console.log({"params": params, "data": params.data, "colour": colour});
-                    if (colour == "red") {
+                    if (colour === "red") {
                         var bGroundClr = '#FEC4C4'
-                    } else if (colour == "green") {
+                    } else if (colour === "green") {
                         bGroundClr = '#C6FEC4'
                     }
                     return {background: bGroundClr}
@@ -60,7 +60,7 @@ class Grid extends Component {
     }
 
     updateData() {
-        this.getData("?[`trade;();(enlist `sym)!enlist `sym;`maxprice`minprice`lvc!(((`.Q.f;2);(max;(avgs,`price)));((`.Q.f;2);(min;(avgs,`price)));((`.Q.f;2);(last;(avgs,`price))))],'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec -2#price by sym from trade)")
+        this.getData("a:select avgs price by sym from trade;(select maxprice:.Q.f[4]each max each price,minprice:.Q.f[4]each min each price,lvc:.Q.f[4]each last each price by sym from a),'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec "+'"F"'+"$.Q.f[4]each -2#avgs price by sym from trade)")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
