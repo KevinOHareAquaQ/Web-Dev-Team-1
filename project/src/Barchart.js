@@ -6,15 +6,13 @@ import { ChartCanvas, Chart } from "react-stockcharts";
 import { BarSeries } from "react-stockcharts/lib/series";
 import { XAxis, YAxis } from "react-stockcharts/lib/axes";
 import { fitWidth } from "react-stockcharts/lib/helper";
-import axios from 'axios';
+import axios from "axios";
 
 class BarChart extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            rowData: []
-        }
+        this.state = {data: null}
         this.updateData();
     }
 
@@ -37,52 +35,51 @@ class BarChart extends React.Component {
 
     getData(query) {
         this.options['data'] = { 'query': query, 'response': 'true', 'type': 'sync'};
-        return axios(this.options)
-            .then(response => response.data);
-    }
+        return axios(this.options).then(response => response.data);
+    };
 
     updateData() {
-        this.getData("0!select y:`int$count i by x:string sym from trade")
+        //const Sym_Name=this.props.sym;
+        this.getData("select x:sym,y:size from 0N!?[`trade;();(enlist`sym)!enlist`sym;(enlist`size)!enlist(sum;`size)]")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
-                    this.setState({rowData: data.result});
+                    this.setState({data: data.result});
                 }
             });
+    };
+
+    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 3000);};
+
+    render() {
+
+        if (this.state.data == null) {
+            return <div> Loading ... </div>
+        } else {
+
+            return (
+
+                <ChartCanvas ratio={1}
+                             width={900}
+                             height={400}
+                             margin={{left: 100, right: 10, top: 20, bottom: 100}}
+                             seriesName="Companies"
+                             xExtents={list => list.map(d => d.x)}
+                             data={this.state.data}
+                             xAccessor={d => d.x}
+                             xScale={scalePoint()}
+                             padding={1}
+                >
+                    <Chart id={1} yExtents={d => [3000000, d.y]}>
+                        <XAxis axisAt="bottom" orient="bottom" text={'Syms'}/>
+                        <YAxis axisAt="left" orient="left"/>
+                        <BarSeries yAccessor={d => d.y}/>
+                    </Chart>
+                </ChartCanvas>
+
+            );
+        }
     }
-
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);}
-
-	render() {
-
-		return (
-			<ChartCanvas
-				width={800}
-				height={400}
-				margin={{ left: 80, right: 10, top: 20, bottom: 30 }}
-				seriesName="Fruits"
-				xExtents={list => list.map(d => d.x)}
-				data={this.state.rowData}
-				xAccessor={d => d.x}
-//				xScale={scalePoint()}
-				padding={1}
-			>
-				<Chart id={1} yExtents={d => [0, d.y]}>
-					<XAxis axisAt="bottom" orient="bottom" />
-					<YAxis axisAt="left" orient="left" />
-					<BarSeries yAccessor={d => d.y} />
-				</Chart>
-			</ChartCanvas>
-
-		);
-	}
 }
-
-
-BarChart.defaultProps = {
-	type: "svg",
-};
-
-BarChart = fitWidth(BarChart);
 
 export default BarChart;
