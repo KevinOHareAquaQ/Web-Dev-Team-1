@@ -42,7 +42,7 @@ class BarChart extends React.Component {
     }
 
     updateData() {
-        this.getData("0!select y:`int$count i by x:string sym from trade")
+        this.getData("select size:sum size by sym from trade")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
