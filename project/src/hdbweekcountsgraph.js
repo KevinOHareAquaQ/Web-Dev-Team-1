@@ -61,7 +61,7 @@ class HDBCOUNTSWEEK extends React.Component {
     
     updateData() {
         const Sym_Name=this.props.sym;
-        this.getData("0!select y:count i by x:date from trade where date>.z.d-7")
+        this.getData("0!select y:count i by x:date from trade where date>.z.d-7") //alternative date for exact last working week (mon-fri last week): where date within (`week$-1+`week$.z.d;5+`week$-1+`week$.z.d)
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
