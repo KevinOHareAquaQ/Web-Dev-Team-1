@@ -130,18 +130,8 @@ class AreaChartHDB extends React.Component {
                             strokeWidth={2}
                             interpolation={curveMonotoneX}
                             canvasGradient={canvasGradient}
-                        />  <LineSeries yAccessor={data => data.y}  />
+                        />  <LineSeries yAccessor={data => data.y}  strokeWidth={3} />
 
-                        <SingleValueTooltip
-                            xLabel="Date" /* xLabel is optional, absence will not show the x value */ yLabel="C"
-                            yAccessor={d => d.close}
-                            xDisplayFormat={timeFormat("%Y-%m-%d")} yDisplayFormat={format(".2f")}
-                            /* valueStroke="green" - optional prop */
-                            /* labelStroke="#4682B4" - optional prop */
-                            origin={[0, 0]}/>
-                        <SingleValueTooltip
-                            yLabel="Volume" yAccessor={(d) => d.volume}
-                            origin={[0, 20]}/>
 
                     </Chart>
 

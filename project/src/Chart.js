@@ -100,6 +100,7 @@ class AreaChart extends React.Component {
                              data={data} type={type}
                              xAccessor={d => d.x}
                              xScale={xScaleSetter}
+
 //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
                 >
 
@@ -126,21 +127,12 @@ class AreaChart extends React.Component {
                         <AreaSeries
                             yAccessor={d => data.y}
                             fill="url(#MyGradient)"
-                            strokeWidth={2}
+                            strokeWidth={5}
                             interpolation={curveMonotoneX}
                             canvasGradient={canvasGradient}
-                        />  <LineSeries yAccessor={data => data.y}  />
 
-                        <SingleValueTooltip
-                            xLabel="Date" /* xLabel is optional, absence will not show the x value */ yLabel="C"
-                            yAccessor={d => d.close}
-                            xDisplayFormat={timeFormat("%Y-%m-%d")} yDisplayFormat={format(".2f")}
-                            /* valueStroke="green" - optional prop */
-                            /* labelStroke="#4682B4" - optional prop */
-                            origin={[0, 0]}/>
-                        <SingleValueTooltip
-                            yLabel="Volume" yAccessor={(d) => d.volume}
-                            origin={[0, 20]}/>
+                        />  <LineSeries yAccessor={data => data.y}    strokeWidth={3}  />
+
 
                     </Chart>
 
