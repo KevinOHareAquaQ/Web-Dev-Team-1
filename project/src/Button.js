@@ -28,8 +28,8 @@ class Grid_Button extends React.Component {
 
 
     render() {
-        const defaultOption = this.state
-        const dateOption = typeof this.state === 'string' ? this.state : this.state.selected.label
+        //const defaultOption = this.state
+        //const dateOption = typeof this.state === 'string' ? this.state : this.state.selected.label
 
         return (
             <form onSubmit={this.handleSubmit}>

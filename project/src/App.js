@@ -12,7 +12,7 @@ import HDBGrid from "./hdbweekmaxmin";
 import HDBGrid2 from "./hdbweeksym";
 import HDBCOUNTSWEEK from "./hdbweekcountsgraph";
 import Grid_Button from "./Button";
-//import BarChart from "./Barchart";
+import BarChart from "./Barchart";
 
 require('./index.css');
 
@@ -32,6 +32,7 @@ function App() {
                 <Grid />
                 <h1>Highest traded sym by vol</h1>
                 <Maxvolchart />
+                <BarChart />
             </div>
             <div label="HDB">
                 <Grid_Button/>

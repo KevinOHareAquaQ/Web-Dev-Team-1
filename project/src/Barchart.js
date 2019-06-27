@@ -39,12 +39,8 @@ class BarChart extends React.Component {
     };
 
     updateData() {
-<<<<<<< HEAD
-        this.getData("select size:sum size by sym from trade")
-=======
         //const Sym_Name=this.props.sym;
-        this.getData("select x:sym,y:size from 0N!?[`trade;();(enlist`sym)!enlist`sym;(enlist`size)!enlist(sum;`size)]")
->>>>>>> master
+        this.getData("0!select y:sum size by x:sym from trade")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
