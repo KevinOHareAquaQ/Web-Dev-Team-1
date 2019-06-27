@@ -60,7 +60,11 @@ class Grid extends Component {
     }
 
     updateData() {
+<<<<<<< HEAD
         this.getData("a:select avgs price by sym from trade;(select maxprice:.Q.f[4]each max each price,minprice:.Q.f[4]each min each price,lvc:.Q.f[4]each last each price by sym from a),'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec "+'"F"'+"$.Q.f[4]each -2#avgs price by sym from trade)")
+=======
+        this.getData("?[`trade;();(enlist `sym)!enlist `sym;`maxprice`minprice`lvc!(((`.Q.f;4);(max;(avgs,`price)));((`.Q.f;4);(min;(avgs,`price)));((`.Q.f;4);(last;(avgs,`price))))],'([]colour:{?[x[;0]<x[;1];`green;?[x[;0]=x[;1];`same;`red]]}value exec -2#price by sym from trade)")
+>>>>>>> master
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
