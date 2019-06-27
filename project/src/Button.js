@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import AreaChart from "./Chart";
 
 class Grid_Button extends React.Component {
     constructor() {
@@ -9,7 +9,7 @@ class Grid_Button extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
-            day: ''
+            day: '.z.d-1'
         };
     }
 
@@ -28,6 +28,9 @@ class Grid_Button extends React.Component {
 
 
     render() {
+        const defaultOption = this.state
+        const dateOption = typeof this.state === 'string' ? this.state : this.state.selected.label
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <p>Toggle Grid:</p>
@@ -37,8 +40,8 @@ class Grid_Button extends React.Component {
                         <label>
                             <input
                                 type="radio"
-                                value="1 day"
-                                checked={this.state.day === "1 day"}
+                                value=".z.d-1"
+                                checked={this.state.day === ".z.d-1"}
                                 onChange={this.handleChange}
                             />
                             1 Day
@@ -49,8 +52,8 @@ class Grid_Button extends React.Component {
                         <label>
                             <input
                                 type="radio"
-                                value="2 days"
-                                checked={this.state.day === "2 days"}
+                                value=".z.d-2"
+                                checked={this.state.day === ".z.d-2"}
                                 onChange={this.handleChange}
                             />
                             2 Day
@@ -61,8 +64,8 @@ class Grid_Button extends React.Component {
                         <label>
                             <input
                                 type="radio"
-                                value="1 Week"
-                                checked={this.state.day === "1 Week"}
+                                value=".z.d-7"
+                                checked={this.state.day === ".z.d-7"}
                                 onChange={this.handleChange}
                             />
                             7 Days
@@ -73,8 +76,8 @@ class Grid_Button extends React.Component {
                         <label>
                             <input
                                 type="radio"
-                                value="1 Month"
-                                checked={this.state.day === "1 Month"}
+                                value=".z.d-30"
+                                checked={this.state.day === ".z.d-30"}
                                 onChange={this.handleChange}
                             />
                             1 Month
@@ -85,8 +88,8 @@ class Grid_Button extends React.Component {
                         <label>
                             <input
                                 type="radio"
-                                value="3 Months"
-                                checked={this.state.day === "3 Months"}
+                                value=".z.d-90"
+                                checked={this.state.day === ".z.d-90"}
                                 onChange={this.handleChange}
                             />
                             3 Months
@@ -97,7 +100,7 @@ class Grid_Button extends React.Component {
                 </ul>
 
 
-                <button type="submit">Make your choice</button>
+                <button type="submit">Submit</button>
             </form>
         );
     }
