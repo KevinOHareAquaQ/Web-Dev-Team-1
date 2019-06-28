@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import AreaChart from "./Chart";
 
-class Grid_Button extends React.Component {
+export class Grid_Button extends React.Component {
     constructor() {
         super();
 
@@ -13,11 +12,11 @@ class Grid_Button extends React.Component {
         };
     }
 
-
     handleChange(event) {
         this.setState({
             day: event.target.value
         });
+        this.props.onSelectDay(this.state.day);
     }
 
     handleSubmit(event) {
@@ -26,10 +25,7 @@ class Grid_Button extends React.Component {
         alert(`You chose ${this.state.day} of data`);
     }
 
-
     render() {
-        //const defaultOption = this.state
-        //const dateOption = typeof this.state === 'string' ? this.state : this.state.selected.label
 
         return (
             <form onSubmit={this.handleSubmit}>
@@ -101,8 +97,11 @@ class Grid_Button extends React.Component {
 
 
                 <button type="submit">Submit</button>
+
             </form>
+
         );
+
     }
 
 }

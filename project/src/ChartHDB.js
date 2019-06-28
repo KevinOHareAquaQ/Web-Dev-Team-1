@@ -9,7 +9,7 @@ import { fitWidth } from "react-stockcharts/lib/helper";
 import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
 import axios from 'axios';
 import { LineSeries } from "react-stockcharts/lib/series";
-
+import Grid_Button from "./Button"
 import { format } from "d3-format";
 import { timeFormat } from "d3-time-format";
 import {
@@ -32,7 +32,8 @@ class AreaChartHDB extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            rowData: []
+            rowData: [],
+            date: ''
         }
        this.updateData();
     }
@@ -63,6 +64,7 @@ class AreaChartHDB extends React.Component {
     updateData() {
         const Sym_Name=this.props.sym;
         const startdate=this.props.startdate;
+
         this.getData("{[symb;window;sd;ed]select x:time,y:window mdev price from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";1000;"+startdate+";.z.d]")
 //            this.getData("select x:time,y:price from trade where sym=`"+Sym_Name)
             .then(data => {
@@ -85,8 +87,12 @@ class AreaChartHDB extends React.Component {
         return data;
        };
 
+    handleDay = (dayValue) => {
+        this.setState({day: dayValue});
+    }
+
     render() {
-       
+
         if (this.state.rowData === undefined || this.state.rowData.length==0) {
             return <div>Loading...</div>
         } else {        
