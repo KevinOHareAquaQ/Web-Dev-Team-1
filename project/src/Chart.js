@@ -39,7 +39,7 @@ class AreaChart extends React.Component {
     }
 
     options = {
-        url: 'https://81.137.196.157:8190/executeQuery',
+        url: 'https://localhost:3200/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -74,7 +74,7 @@ class AreaChart extends React.Component {
             });
     };
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 10000);};
+    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);};
     parseTimes(data) {
         //const parseTime = timeParse("%H:%M:%S");
         var i = 0;

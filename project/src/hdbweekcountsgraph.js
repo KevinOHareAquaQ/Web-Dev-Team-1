@@ -37,7 +37,7 @@ class HDBCOUNTSWEEK extends React.Component {
     }
 
     options = {
-        url: 'https://81.137.196.157:8191/executeQuery',
+        url: 'https://localhost:3201/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -71,7 +71,6 @@ class HDBCOUNTSWEEK extends React.Component {
             });
     };
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 3000);};
     parseTimes(data) {
         var i = 0;
         for (i; i < data.length ; i++) {

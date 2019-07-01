@@ -16,7 +16,7 @@ export class Grid_Button extends React.Component {
         this.setState({
             day: event.target.value
         });
-        this.props.onSelectDay(this.state.day);
+        this.props.onSelectDay(event.target.value)
     }
 
     handleSubmit(event) {
@@ -28,7 +28,7 @@ export class Grid_Button extends React.Component {
     render() {
 
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form >
                 <p>Toggle Grid:</p>
 
                 <ul >
@@ -96,7 +96,6 @@ export class Grid_Button extends React.Component {
                 </ul>
 
 
-                <button type="submit">Submit</button>
 
             </form>
 

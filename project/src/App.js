@@ -25,9 +25,8 @@ function App() {
         </header>
         <Tabs>
             <div label="RDB">
-            <h1>Price (Running average)</h1>
+                <h1>Price (Running average)</h1>
                 <DropMenu/>
-
                 <h1>Min price/Max price/LVC per sym</h1>
                 <Grid />
                 <h1>Highest traded sym by vol</h1>
@@ -35,15 +34,14 @@ function App() {
                 <BarChart />
             </div>
             <div label="HDB">
-                <Grid_Button/>
-            <h1>Sym Volatility by date (select start and end time)</h1>
-            <DropMenuHDB/>
-            <h1>Max volume traded per day (previous week)</h1>
-            <HDBGrid />
-            <h1>Volume traded per sym (previous week)</h1>
-            <HDBGrid2 />
-            <h1>   Total volume traded per day (previous week)</h1>
-            <HDBCOUNTSWEEK />
+                <h1>Sym Volatility by date (select start and end time)</h1>
+                <DropMenuHDB/>
+                <h1>Max volume traded per day (previous week)</h1>
+                <HDBGrid />
+                <h1>Volume traded per sym (previous week)</h1>
+                <HDBGrid2 />
+                <h1>   Total volume traded per day (previous week)</h1>
+                <HDBCOUNTSWEEK />
             </div>
         </Tabs>
 

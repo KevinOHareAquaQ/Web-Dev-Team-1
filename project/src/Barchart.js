@@ -17,7 +17,7 @@ class BarChart extends React.Component {
     }
 
     options = {
-        url: 'https://81.137.196.157:8190/executeQuery',
+        url: 'https://localhost:3200/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -49,7 +49,7 @@ class BarChart extends React.Component {
             });
     };
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 3000);};
+    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 5000);};
 
     render() {
 

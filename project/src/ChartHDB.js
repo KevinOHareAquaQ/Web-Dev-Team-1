@@ -33,13 +33,17 @@ class AreaChartHDB extends React.Component {
         super(props);
         this.state = {
             rowData: [],
-            date: ''
+            day:'.z.d-1'
         }
-       this.updateData();
+        this.updateData();
+    }
+
+    handleSelect = (selectValue) => {
+        this.setState({day:selectValue},()=>this.updateData());
     }
 
     options = {
-        url: 'https://81.137.196.157:8191/executeQuery',
+        url: 'https://localhost:3201/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -63,10 +67,10 @@ class AreaChartHDB extends React.Component {
     
     updateData() {
         const Sym_Name=this.props.sym;
-        const startdate=this.props.startdate;
+        const startdate=this.state.day;
 
-        this.getData("{[symb;window;sd;ed]select x:time,y:window mdev price from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";1000;"+startdate+";.z.d]")
-//            this.getData("select x:time,y:price from trade where sym=`"+Sym_Name)
+        this.getData("{[symb;window;t;sd;ed]select x,window mdev y from (select y:avg price by x:((1 xbar time.date)+ t xbar time.minute) from trade where date within (sd;ed),sym=symb)}[`"+Sym_Name+";100;15;"+startdate+";.z.d]")
+//            this.getData("{[symb;t;sd;ed]select y:dev price by x:date+t xbar time.minute from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";15;"+startdate+";.z.d]")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -76,7 +80,6 @@ class AreaChartHDB extends React.Component {
             });
     };
 
-    componentDidMount() {this.interval= setInterval(() =>  this.updateData(), 1000);};
 
     parseTimes(data) {
         //const parseTime = timeParse("%H:%M:%S");
@@ -86,10 +89,6 @@ class AreaChartHDB extends React.Component {
         }
         return data;
        };
-
-    handleDay = (dayValue) => {
-        this.setState({day: dayValue});
-    }
 
     render() {
 
@@ -101,6 +100,7 @@ class AreaChartHDB extends React.Component {
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
+                <div><Grid_Button onSelectDay={this.handleSelect}/>
                 <ChartCanvas ratio={ratio} width={1000} height={400}
                              margin={{left: 100, right: 50, top: 50, bottom: 30}}
                              seriesName="MSFT"
@@ -161,6 +161,7 @@ class AreaChartHDB extends React.Component {
                     <CrossHairCursor />
 
                 </ChartCanvas>
+                </div>
             );
         }
     }

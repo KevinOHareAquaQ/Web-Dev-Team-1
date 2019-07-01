@@ -1,5 +1,20 @@
 header {
   text-align: center;
+  background-color: #0d0d0d;
+  background-image: linear-gradient(to bottom right, #0d0d0d, #48657a);
+}
+
+li.tab-list-item {
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+li.tab-list-active {
+  background-color: #242424;
+}
+
+ol.tab-list {
+  background-color: lightslategrey;
 }
 
 td {
