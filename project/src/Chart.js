@@ -39,7 +39,7 @@ class AreaChart extends React.Component {
     }
 
     options = {
-        url: 'https://81.137.196.157:8190/executeQuery',
+        url: 'https://localhost:3200/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -93,6 +93,7 @@ class AreaChart extends React.Component {
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
+
                 <ChartCanvas ratio={ratio} width={1000} height={400}
                              margin={{left: 100, right: 50, top: 50, bottom: 30}}
                              seriesName="MSFT"
@@ -104,6 +105,7 @@ class AreaChart extends React.Component {
                 >
 
                     <Chart id={0} yExtents={d => d.y}>
+
                         <defs>
                             <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
                                 <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
@@ -111,7 +113,7 @@ class AreaChart extends React.Component {
                                 <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
                             </linearGradient>
                         </defs>
-                        <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
+                        <XAxis axisAt="bottom" orient="bottom" ticks={6} text="XAxis Label here" />
                         <YAxis axisAt="left" orient="left"/>
 
                         <MouseCoordinateX
@@ -119,8 +121,8 @@ class AreaChart extends React.Component {
                             orient="bottom"
                             displayFormat={timeFormat("%H:%M")} />
                         <MouseCoordinateY
-                            at="right"
-                            orient="right"
+                            at="left"
+                            orient="left"
                             displayFormat={format(".2f")} />
 
                         <AreaSeries
@@ -139,11 +141,11 @@ class AreaChart extends React.Component {
                            yExtents={d => d.volume}
                            height={150} origin={(w, h) => [0, h - 150]}
                     >
-                        <YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
+                        <YAxis axisAt="right" orient="right" ticks={5} tickFormat={format(".2s")}/>
 
                         <MouseCoordinateY
-                            at="left"
-                            orient="left"
+                            at="right"
+                            orient="right"
                             displayFormat={format(".4s")} />
 
                         <BarSeries yAccessor={d => d.volume}
