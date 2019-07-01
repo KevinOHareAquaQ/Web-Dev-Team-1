@@ -37,7 +37,7 @@ class Grid extends Component {
     }
 
     options = {
-        url: 'https://81.137.196.157:8190/executeQuery',
+        url: 'https://localhost:3200/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -73,15 +73,15 @@ class Grid extends Component {
 
     render(){
         return (
-            <div
-                className="ag-theme-blue"
+            <div className="ag-theme-blue"
                 style={{
-                    paddingTop: '50px',
+                    textAlign: "center",
+                    paddingTop: '20px',
                     paddingLeft: '100px',
                     height: '277px',
                     width: '802px',
-                    }}
-            >
+                }}>
+
                 <AgGridReact
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}>

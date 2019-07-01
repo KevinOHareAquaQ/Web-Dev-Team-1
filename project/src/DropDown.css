@@ -92,9 +92,9 @@ li:hover {
 }
 
 .x-axis-text {
-    height: 30px;
+    height: 10px;
     width: 1075px;
-    padding-top: 0px;
+    padding-bottom: 50px;
     text-align: center;
     position: absolute;
 }

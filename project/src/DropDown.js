@@ -29,27 +29,26 @@ class DropMenu extends Component {
         return (
 
             <section>
+
                 <h3>Select Symbol </h3>
                 <Dropdown options={options} onChange={this._onSelect} value={defaultOption} Message="Select  sym" />
                 <div className='result'>
-                    Current Sym is
-                    <strong> {Sym_name} </strong>
+                    {/*Current Sym is <strong> {Sym_name} </strong>*/}
                 </div>
 
                 <div label="chart">
                     <img src={icon} className="red_led" alt="icon" />
-
+                    <h1 className="x-axis-text">Running average price of {Sym_name}</h1>
                     <div className="row">
                         <div className="left">
-                            <h1 className="h-text">Volume traded for this sym</h1>
+                            <h1 className="h-text">Average price</h1>
                         </div>
                         <AreaChart sym={Sym_name}/>
                     </div>
                     <h1 className="x-axis-text">Time</h1>
-
                 </div>
 
-               </section>
+            </section>
         )
     }
 }

@@ -26,7 +26,7 @@ class HDBGrid extends Component {
     }
 
     options = {
-        url: 'https://81.137.196.157:8191/executeQuery',
+        url: 'https://localhost:3201/executeQuery',
         auth: {
             username: 'user',
             password: 'pass',
@@ -63,6 +63,7 @@ class HDBGrid extends Component {
             <div
                 className="ag-theme-blue"
                 style={{
+                    textAlign: "center",
                     paddingTop: '50px',
                     paddingBottom: '50px',
                     paddingLeft: '100px',

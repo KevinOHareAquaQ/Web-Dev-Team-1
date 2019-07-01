@@ -95,7 +95,7 @@ class AreaChart extends React.Component {
             return (
 
                 <ChartCanvas ratio={ratio} width={1000} height={400}
-                             margin={{left: 100, right: 50, top: 50, bottom: 30}}
+                             margin={{left: 100, right: 50, top: 50, bottom: 20}}
                              seriesName="MSFT"
                              data={data} type={type}
                              xAccessor={d => d.x}
@@ -103,7 +103,6 @@ class AreaChart extends React.Component {
 
 //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
                 >
-
                     <Chart id={0} yExtents={d => d.y}>
 
                         <defs>

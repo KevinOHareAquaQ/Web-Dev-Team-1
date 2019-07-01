@@ -120,8 +120,8 @@ class AreaChartHDB extends React.Component {
                             orient="bottom"
                             displayFormat={timeFormat("%H:%M")} />
                         <MouseCoordinateY
-                            at="right"
-                            orient="right"
+                            at="left"
+                            orient="left"
                             displayFormat={format(".2f")} />
 
                         <AreaSeries
@@ -139,11 +139,11 @@ class AreaChartHDB extends React.Component {
                            yExtents={d => d.volume}
                            height={150} origin={(w, h) => [0, h - 150]}
                     >
-                        <YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
+                        <YAxis axisAt="right" orient="right" ticks={5} tickFormat={format(".2s")}/>
 
                         <MouseCoordinateY
-                            at="left"
-                            orient="left"
+                            at="right"
+                            orient="right"
                             displayFormat={format(".4s")} />
 
                         <BarSeries yAccessor={d => d.volume}
