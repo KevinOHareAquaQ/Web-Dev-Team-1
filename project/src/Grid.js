@@ -73,15 +73,15 @@ class Grid extends Component {
 
     render(){
         return (
-            <div
-                className="ag-theme-blue"
+            <div className="ag-theme-blue"
                 style={{
-                    paddingTop: '50px',
+                    textAlign: "center",
+                    paddingTop: '20px',
                     paddingLeft: '100px',
                     height: '277px',
                     width: '802px',
-                    }}
-            >
+                }}>
+
                 <AgGridReact
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}>

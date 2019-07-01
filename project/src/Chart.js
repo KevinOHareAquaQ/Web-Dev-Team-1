@@ -94,8 +94,9 @@ class AreaChart extends React.Component {
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
+
                 <ChartCanvas ratio={ratio} width={1000} height={400}
-                             margin={{left: 100, right: 50, top: 50, bottom: 30}}
+                             margin={{left: 100, right: 50, top: 50, bottom: 20}}
                              seriesName="MSFT"
                              data={data} type={type}
                              xAccessor={d => d.x}
@@ -103,8 +104,8 @@ class AreaChart extends React.Component {
 
 //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
                 >
-
                     <Chart id={0} yExtents={d => d.y}>
+
                         <defs>
                             <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
                                 <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
@@ -112,7 +113,7 @@ class AreaChart extends React.Component {
                                 <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
                             </linearGradient>
                         </defs>
-                        <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
+                        <XAxis axisAt="bottom" orient="bottom" ticks={6} text="XAxis Label here" />
                         <YAxis axisAt="left" orient="left"/>
 
                         <MouseCoordinateX

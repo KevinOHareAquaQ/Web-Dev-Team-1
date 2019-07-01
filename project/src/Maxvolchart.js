@@ -60,6 +60,7 @@ class Maxvolchart extends Component {
             <div
                 className="ag-theme-blue"
                 style={{
+                    textAlign: "center",
                     paddingBottom: '50px',
                     paddingLeft: '100px',
                     height: '55px',

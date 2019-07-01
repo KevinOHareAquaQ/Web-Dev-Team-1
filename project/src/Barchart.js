@@ -7,6 +7,9 @@ import { BarSeries } from "react-stockcharts/lib/series";
 import { XAxis, YAxis } from "react-stockcharts/lib/axes";
 import { fitWidth } from "react-stockcharts/lib/helper";
 import axios from "axios";
+import Dropdown from "react-dropdown";
+import icon from "./red_led.png";
+import AreaChart from "./Chart";
 
 class BarChart extends React.Component {
 
@@ -59,24 +62,38 @@ class BarChart extends React.Component {
 
             return (
 
-                <ChartCanvas ratio={1}
-                             width={900}
-                             height={400}
-                             margin={{left: 100, right: 10, top: 20, bottom: 100}}
-                             seriesName="Companies"
-                             xExtents={list => list.map(d => d.x)}
-                             data={this.state.data}
-                             xAccessor={d => d.x}
-                             xScale={scalePoint()}
-                             padding={1}
-                >
-                    <Chart id={1} yExtents={d => [3000000, d.y]}>
-                        <XAxis axisAt="bottom" orient="bottom" text={'Syms'}/>
-                        <YAxis axisAt="left" orient="left"/>
-                        <BarSeries yAccessor={d => d.y}/>
-                    </Chart>
-                </ChartCanvas>
+                <section>
 
+                    <h1 className="x-axis-text">Volume Traded by Sym</h1>
+                    <div label="chart">
+                        <div className="row">
+                            <div className="left">
+                                <h1 className="h-text">Trade Volume</h1>
+                            </div>
+
+                            <ChartCanvas ratio={1}
+                                         width={900}
+                                         height={400}
+                                         margin={{left: 100, right: 10, top: 70, bottom: 20}}
+                                         seriesName="Companies"
+                                         xExtents={list => list.map(d => d.x)}
+                                         data={this.state.data}
+                                         xAccessor={d => d.x}
+                                         xScale={scalePoint()}
+                                         padding={1}
+                            >
+                                <Chart id={1} yExtents={d => [3000000, d.y]}>
+                                    <XAxis axisAt="bottom" orient="bottom" text={'Syms'}/>
+                                    <YAxis axisAt="left" orient="left" />
+                                    <BarSeries yAccessor={d => d.y}/>
+                                </Chart>
+
+                            </ChartCanvas>
+
+                        </div>
+                        <h1 className="x-axis-text">Sym</h1>
+                    </div>
+                </section>
             );
         }
     }

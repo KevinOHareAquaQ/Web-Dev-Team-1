@@ -52,3 +52,9 @@ td {
     transform: rotate(360deg);
   }
 }
+
+.min-price-text {
+  width: 1000px;
+  text-align: center;
+  padding-top: 50px;
+}

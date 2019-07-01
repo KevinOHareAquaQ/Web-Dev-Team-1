@@ -63,6 +63,7 @@ class HDBGrid extends Component {
             <div
                 className="ag-theme-blue"
                 style={{
+                    textAlign: "center",
                     paddingTop: '50px',
                     paddingBottom: '50px',
                     paddingLeft: '100px',

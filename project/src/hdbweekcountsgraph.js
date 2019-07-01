@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { scaleTime} from "d3-scale";
+import {scalePoint, scaleTime} from "d3-scale";
 import { curveMonotoneX } from "d3-shape";
 import { ChartCanvas, Chart } from "react-stockcharts";
 import { BarSeries, AreaSeries } from "react-stockcharts/lib/series";
@@ -17,8 +17,6 @@ import {
     MouseCoordinateX,
     MouseCoordinateY,
 } from "react-stockcharts/lib/coordinates";
-
-import { SingleValueTooltip } from "react-stockcharts/lib/tooltip";
 
 const canvasGradient = createVerticalLinearGradient([
     { stop: 0, color: hexToRGBA("#b5d0ff", 0.2) },
@@ -89,76 +87,82 @@ class HDBCOUNTSWEEK extends React.Component {
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
-                <ChartCanvas ratio={ratio} width={1000} height={400}
-                             margin={{left: 100, right: 50, top: 50, bottom: 30}}
-                             seriesName="MSFT"
-                             data={data} type={type}
-                             xAccessor={d => d.x}
-                             xScale={xScaleSetter}
-//                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
-                >
 
-                    <Chart id={0} yExtents={d => d.y}>
-                        <defs>
-                            <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
-                                <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
-                                <stop offset="70%" stopColor="#6fa4fc" stopOpacity={0.0}/>
-                                <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
-                            </linearGradient>
-                        </defs>
-                        <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
-                        <YAxis axisAt="left" orient="left"/>
+                <section>
 
-                        <MouseCoordinateX
-                            at="bottom"
-                            orient="bottom"
-                            displayFormat={timeFormat("%H:%M")} />
-                        <MouseCoordinateY
-                            at="right"
-                            orient="right"
-                            displayFormat={format(".2f")} />
+                    <h1 className="x-axis-text">Total Volume Traded Per Day (Previous Week)</h1>
+                    <div label="chart">
+                        <div className="row">
+                            <div className="left">
+                                <h1 className="h-text">Volume Traded</h1>
+                            </div>
 
-                        <AreaSeries
-                            yAccessor={d => data.y}
-                            fill="url(#MyGradient)"
-                            strokeWidth={2}
-                            interpolation={curveMonotoneX}
-                            canvasGradient={canvasGradient}
-                        />  <LineSeries yAccessor={data => data.y}  />
+                            <ChartCanvas ratio={ratio} width={1000} height={400}
+                                         margin={{left: 100, right: 50, top: 50, bottom: 20}}
+                                         seriesName="MSFT"
+                                         data={data} type={type}
+                                         xAccessor={d => d.x}
+                                         xScale={xScaleSetter}
+                                //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
+                            >
 
-                        <SingleValueTooltip
-                            xLabel="Date" /* xLabel is optional, absence will not show the x value */ yLabel="C"
-                            yAccessor={d => d.close}
-                            xDisplayFormat={timeFormat("%Y-%m-%d")} yDisplayFormat={format(".2f")}
-                            /* valueStroke="green" - optional prop */
-                            /* labelStroke="#4682B4" - optional prop */
-                            origin={[0, 0]}/>
-                        <SingleValueTooltip
-                            yLabel="Volume" yAccessor={(d) => d.volume}
-                            origin={[0, 20]}/>
+                                <Chart id={0} yExtents={d => d.y}>
+                                    <defs>
+                                        <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
+                                            <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
+                                            <stop offset="70%" stopColor="#6fa4fc" stopOpacity={0.0}/>
+                                            <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
+                                        </linearGradient>
+                                    </defs>
+                                    <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
+                                    <YAxis axisAt="left" orient="left"/>
 
-                    </Chart>
+                                    <MouseCoordinateX
+                                        at="bottom"
+                                        orient="bottom"
+                                        displayFormat={timeFormat("%H:%M")} />
+                                    <MouseCoordinateY
+                                        at="left"
+                                        orient="left"
+                                        displayFormat={format(".2f")} />
 
-                    <Chart id={2}
-                           yExtents={d => d.volume}
-                           height={150} origin={(w, h) => [0, h - 150]}
-                    >
-                        <YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
+                                    <AreaSeries
+                                        yAccessor={d => data.y}
+                                        fill="url(#MyGradient)"
+                                        strokeWidth={2}
+                                        interpolation={curveMonotoneX}
+                                        canvasGradient={canvasGradient}
+                                    />  <LineSeries yAccessor={data => data.y}  />
 
-                        <MouseCoordinateY
-                            at="left"
-                            orient="left"
-                            displayFormat={format(".4s")} />
+                                </Chart>
 
-                        <BarSeries yAccessor={d => d.volume}
-                                   stroke fill={(d) => d.close > d.open ? "#27a50b" : "#FF0000"}
-                                   opacity={0.4}
-                                   widthRatio={1} />
-                    </Chart>
 
-                    <CrossHairCursor />
+                                <Chart id={2}
+                                       yExtents={d => d.volume}
+                                       height={150} origin={(w, h) => [0, h - 150]}
+                                >
+                                    <YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
 
-                </ChartCanvas>
+                                    <MouseCoordinateY
+                                        at="left"
+                                        orient="left"
+                                        displayFormat={format(".4s")} />
+
+                                    <BarSeries yAccessor={d => d.volume}
+                                               stroke fill={(d) => d.close > d.open ? "#27a50b" : "#FF0000"}
+                                               opacity={0.4}
+                                               widthRatio={1} />
+                                </Chart>
+
+
+                                <CrossHairCursor />
+
+                            </ChartCanvas>
+
+                        </div>
+                        <h1 className="x-axis-text">Date</h1>
+                    </div>
+                </section>
             );
         }
     }
