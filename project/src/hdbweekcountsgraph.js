@@ -17,6 +17,8 @@ import {
     MouseCoordinateX,
     MouseCoordinateY,
 } from "react-stockcharts/lib/coordinates";
+import {CircleMarker} from "react-stockcharts/es/lib/series";
+import ScatterSeries from "react-stockcharts/es/lib/series/ScatterSeries";
 
 const canvasGradient = createVerticalLinearGradient([
     { stop: 0, color: hexToRGBA("#b5d0ff", 0.2) },
@@ -106,7 +108,7 @@ class HDBCOUNTSWEEK extends React.Component {
                                 //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
                             >
 
-                                <Chart id={0} yExtents={d => d.y}>
+                                <Chart id={0} yExtents={d => [1.005*d.y, 0.995*d.y]}>
                                     <defs>
                                         <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
                                             <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
@@ -133,6 +135,10 @@ class HDBCOUNTSWEEK extends React.Component {
                                         interpolation={curveMonotoneX}
                                         canvasGradient={canvasGradient}
                                     />  <LineSeries yAccessor={data => data.y} strokeWidth={3} stroke={"#4fb5ff"}/>
+                                    <ScatterSeries
+                                        yAccessor={data => data.y}
+                                        marker={CircleMarker}
+                                        markerProps={{ r: 3,  stroke: "white", fill: "white"}} />
 
                                 </Chart>
 
