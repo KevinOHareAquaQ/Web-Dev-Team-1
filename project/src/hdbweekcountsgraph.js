@@ -115,7 +115,7 @@ class HDBCOUNTSWEEK extends React.Component {
                                         </linearGradient>
                                     </defs>
                                     <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
-                                    <YAxis axisAt="left" orient="left"/>
+                                    <YAxis axisAt="left" orient="left" stroke={"#000000"}/>
 
                                     <MouseCoordinateX
                                         at="bottom"
@@ -132,28 +132,9 @@ class HDBCOUNTSWEEK extends React.Component {
                                         strokeWidth={2}
                                         interpolation={curveMonotoneX}
                                         canvasGradient={canvasGradient}
-                                    />  <LineSeries yAccessor={data => data.y}  />
+                                    />  <LineSeries yAccessor={data => data.y} strokeWidth={3} stroke={"#4fb5ff"}/>
 
                                 </Chart>
-
-
-                                <Chart id={2}
-                                       yExtents={d => d.volume}
-                                       height={150} origin={(w, h) => [0, h - 150]}
-                                >
-                                    <YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
-
-                                    <MouseCoordinateY
-                                        at="left"
-                                        orient="left"
-                                        displayFormat={format(".4s")} />
-
-                                    <BarSeries yAccessor={d => d.volume}
-                                               stroke fill={(d) => d.close > d.open ? "#27a50b" : "#FF0000"}
-                                               opacity={0.4}
-                                               widthRatio={1} />
-                                </Chart>
-
 
                                 <CrossHairCursor />
 

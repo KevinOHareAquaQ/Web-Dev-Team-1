@@ -63,8 +63,8 @@ class AreaChart extends React.Component {
     
     updateData() {
         const Sym_Name=this.props.sym;
-        //this.getData("select x:time,y:avgs price,open:(-2#avgs price)[0],close:last avgs price,volume:size from trade where sym=`"+Sym_Name)
-        this.getData("select x:time,y:avgs price from trade where sym=`"+Sym_Name)
+        this.getData("select x:time,y:avgs price,open:prev avgs price,close:avgs price,volume:avgs size from trade where sym=`"+Sym_Name+",((rank price) mod 5)=0")
+        //this.getData("select x:time,y:avgs price from trade where ((rank price) mod 5)=0,sym=`"+Sym_Name)
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -104,6 +104,23 @@ class AreaChart extends React.Component {
 
 //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
                 >
+                    <Chart id={2}
+                           yExtents={d => d.volume}
+                           height={150} origin={(w, h) => [0, h - 150]}
+
+                    >
+                        <YAxis axisAt="right" orient="right" ticks={2} tickFormat={format(".4s")} stroke="#000000"/>
+
+                        <MouseCoordinateY
+                            at="right"
+                            orient="right"
+                            displayFormat={format(".4s")} />
+
+                        <BarSeries yAccessor={d => d.volume}
+                                   stroke fill={(d) => d.close > d.open ? "#8cff82" : "#ff8282"}
+                                   widthRatio={1} />
+                    </Chart>
+
                     <Chart id={0} yExtents={d => d.y}>
 
                         <defs>
@@ -113,8 +130,8 @@ class AreaChart extends React.Component {
                                 <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
                             </linearGradient>
                         </defs>
-                        <XAxis axisAt="bottom" orient="bottom" ticks={6} text="XAxis Label here" />
-                        <YAxis axisAt="left" orient="left"/>
+                        <XAxis axisAt="bottom" orient="bottom" ticks={6} text="XAxis Label here"/>
+                        <YAxis axisAt="left" orient="left" stroke="#000000"/>
 
                         <MouseCoordinateX
                             at="bottom"
@@ -132,27 +149,12 @@ class AreaChart extends React.Component {
                             interpolation={curveMonotoneX}
                             canvasGradient={canvasGradient}
 
-                        />  <LineSeries yAccessor={data => data.y}    strokeWidth={3}  />
+                        />  <LineSeries yAccessor={data => data.y}    strokeWidth={3} stroke={"#4fb5ff"}/>
 
 
                     </Chart>
 
-                    <Chart id={2}
-                           yExtents={d => d.volume}
-                           height={150} origin={(w, h) => [0, h - 150]}
-                    >
-                        <YAxis axisAt="right" orient="right" ticks={5} tickFormat={format(".2s")}/>
 
-                        <MouseCoordinateY
-                            at="right"
-                            orient="right"
-                            displayFormat={format(".4s")} />
-
-                        <BarSeries yAccessor={d => d.volume}
-                                   stroke fill={(d) => d.close > d.open ? "#27a50b" : "#FF0000"}
-                                   opacity={0.4}
-                                   widthRatio={1} />
-                    </Chart>
 
                     <CrossHairCursor />
 

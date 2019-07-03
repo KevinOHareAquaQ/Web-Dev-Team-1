@@ -82,10 +82,10 @@ class BarChart extends React.Component {
                                          xScale={scalePoint()}
                                          padding={1}
                             >
-                                <Chart id={1} yExtents={d => [3000000, d.y]}>
+                                <Chart id={1} yExtents={d => [1.0025*d.y, 0.9975*d.y]}>
                                     <XAxis axisAt="bottom" orient="bottom" text={'Syms'}/>
-                                    <YAxis axisAt="left" orient="left" />
-                                    <BarSeries yAccessor={d => d.y}/>
+                                    <YAxis axisAt="left" orient="left" stroke={'#000000'}/>
+                                    <BarSeries yAccessor={d => d.y} fill={'#4fb5ff'}/>
                                 </Chart>
 
                             </ChartCanvas>

@@ -76,7 +76,6 @@ li:hover {
     padding-left: 2%;
     width: 50%;
     height: 50%;
-    background: white;
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -96,7 +95,7 @@ li:hover {
     width: 1075px;
     padding-bottom: 50px;
     text-align: center;
-    position: absolute;
+
 }
 
 

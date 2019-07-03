@@ -5,7 +5,6 @@ export class Grid_Button extends React.Component {
         super();
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
             day: '.z.d-1'
@@ -19,20 +18,15 @@ export class Grid_Button extends React.Component {
         this.props.onSelectDay(event.target.value)
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
 
-        alert(`You chose ${this.state.day} of data`);
-    }
 
     render() {
 
         return (
             <form >
-                <p>Toggle Grid:</p>
 
-                <ul >
-                    <li>
+                <ul className = "Button">
+                    <li className = "Button">
                         <label>
                             <input
                                 type="radio"
@@ -44,7 +38,7 @@ export class Grid_Button extends React.Component {
                         </label>
                     </li>
 
-                    <li>
+                    <li className = "Button">
                         <label>
                             <input
                                 type="radio"
@@ -56,7 +50,7 @@ export class Grid_Button extends React.Component {
                         </label>
                     </li>
 
-                    <li>
+                    <li className = "Button">
                         <label>
                             <input
                                 type="radio"
@@ -68,7 +62,7 @@ export class Grid_Button extends React.Component {
                         </label>
                     </li>
 
-                    <li>
+                    <li className = "Button">
                         <label>
                             <input
                                 type="radio"
@@ -80,7 +74,7 @@ export class Grid_Button extends React.Component {
                         </label>
                     </li>
 
-                    <li>
+                    <li className = "Button">
                         <label>
                             <input
                                 type="radio"

@@ -69,8 +69,8 @@ class AreaChartHDB extends React.Component {
         const Sym_Name=this.props.sym;
         const startdate=this.state.day;
 
-        this.getData("{[symb;window;t;sd;ed]select x,window mdev y from (select y:avg price by x:((1 xbar time.date)+ t xbar time.minute) from trade where date within (sd;ed),sym=symb)}[`"+Sym_Name+";100;15;"+startdate+";.z.d]")
-//            this.getData("{[symb;t;sd;ed]select y:dev price by x:date+t xbar time.minute from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";15;"+startdate+";.z.d]")
+//        this.getData("{[symb;window;t;sd;ed]select x,window mdev y from (select y:avg price by x:((1 xbar time.date)+ t xbar time.minute) from trade where date within (sd;ed),sym=symb)}[`"+Sym_Name+";100;15;"+startdate+";.z.d]")
+        this.getData("{[symb;t;sd;ed]select y:dev price by x:date+t xbar time.minute from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";60;"+startdate+";.z.d]")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -119,7 +119,7 @@ class AreaChartHDB extends React.Component {
                             </linearGradient>
                         </defs>
                         <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
-                        <YAxis axisAt="left" orient="left"/>
+                        <YAxis axisAt="left" orient="left" stroke="#000000"/>
 
                         <MouseCoordinateX
                             at="bottom"
@@ -136,26 +136,9 @@ class AreaChartHDB extends React.Component {
                             strokeWidth={2}
                             interpolation={curveMonotoneX}
                             canvasGradient={canvasGradient}
-                        />  <LineSeries yAccessor={data => data.y}  strokeWidth={3} />
+                        />  <LineSeries yAccessor={data => data.y}  strokeWidth={3} stroke={"#4fb5ff"}/>
 
 
-                    </Chart>
-
-                    <Chart id={2}
-                           yExtents={d => d.volume}
-                           height={150} origin={(w, h) => [0, h - 150]}
-                    >
-                        <YAxis axisAt="right" orient="right" ticks={5} tickFormat={format(".2s")}/>
-
-                        <MouseCoordinateY
-                            at="right"
-                            orient="right"
-                            displayFormat={format(".4s")} />
-
-                        <BarSeries yAccessor={d => d.volume}
-                                   stroke fill={(d) => d.close > d.open ? "#27a50b" : "#FF0000"}
-                                   opacity={0.4}
-                                   widthRatio={1} />
                     </Chart>
 
                     <CrossHairCursor />

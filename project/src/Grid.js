@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AgGridReact} from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-blue.css';
+import 'ag-grid-community/dist/styles/ag-theme-dark.css';
 import axios from 'axios';
 
 class Grid extends Component {
@@ -18,13 +18,15 @@ class Grid extends Component {
             }, {
                 headerName: "LVC", field: "lvc",sortable:true,filter:true, cellClass: "lvcClass", cellStyle: function(params) {
                     var colour = params.node.data.colour;
-                    console.log({"params": params, "data": params.data, "colour": colour});
+                    var textcolour = '';
                     if (colour === "red") {
-                        var bGroundClr = '#FEC4C4'
+                        var bGroundClr = '#ff8282';
+                        textcolour = '#000000'
                     } else if (colour === "green") {
-                        bGroundClr = '#C6FEC4'
+                        bGroundClr = '#8cff82';
+                        textcolour = '#000000'
                     }
-                    return {background: bGroundClr}
+                    return {background: bGroundClr, color: textcolour}
                 }
             }, {
                 headerName: "Colour", field: "colour", sortable:true,filter:true,hide:true
@@ -73,11 +75,9 @@ class Grid extends Component {
 
     render(){
         return (
-            <div className="ag-theme-blue"
+            <div className="ag-theme-dark"
                 style={{
                     textAlign: "center",
-                    paddingTop: '20px',
-                    paddingLeft: '100px',
                     height: '277px',
                     width: '802px',
                 }}>

@@ -30,23 +30,39 @@ function App() {
             <div label="RDB">
 
                 {/*<h1>Price (Running average)</h1>*/}
+                <div className="Inner">
                 <DropMenu/>
+                </div>
+                <div className="Inner">
                 <h1 className="min-price-text">Min price/Max price/LVC per sym</h1>
                 <Grid />
+                </div>
+                <div className="Inner">
                 <h1 className="min-price-text">Highest traded sym by vol</h1>
                 <Maxvolchart />
+                </div>
+                <div className="Inner">
                 <BarChart />
+                </div>
             </div>
 
             <div label="HDB">
 
+                <div className="Inner">
                 <h1 className="min-price-text">Sym Volatility by date (select start and end time)</h1>
                 <DropMenuHDB/>
+                </div>
+                <div className="Inner">
                 <h1 className="min-price-text">Max volume traded per day (previous week)</h1>
                 <HDBGrid />
+                </div>
+                <div className="Inner">
                 <h1 className="min-price-text">Volume traded per sym (previous week)</h1>
                 <HDBGrid2 />
+                </div>
+                <div className="Inner">
                 <HDBCOUNTSWEEK />
+                </div>
             </div>
 
         </Tabs>

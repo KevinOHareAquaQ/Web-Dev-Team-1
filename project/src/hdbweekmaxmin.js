@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AgGridReact} from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-blue.css';
+import 'ag-grid-community/dist/styles/ag-theme-dark.css';
 import axios from 'axios';
 
 class HDBGrid extends Component {
@@ -61,12 +61,9 @@ class HDBGrid extends Component {
     render(){
         return (
             <div
-                className="ag-theme-blue"
+                className="ag-theme-dark"
                 style={{
                     textAlign: "center",
-                    paddingTop: '50px',
-                    paddingBottom: '50px',
-                    paddingLeft: '100px',
                     height: '55px',
                     width: '802px' }}
             >

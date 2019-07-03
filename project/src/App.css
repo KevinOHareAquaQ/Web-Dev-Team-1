@@ -1,20 +1,54 @@
 header {
   text-align: center;
-  background-color: #0d0d0d;
-  background-image: linear-gradient(to bottom right, #0d0d0d, #48657a);
+  background-color: #2B2B2B;
+  background-image: linear-gradient(to bottom right, #2B2B2B, #48657a);
 }
 
-li.tab-list-item {
-  background-color: #0d0d0d;
-  color: #ffffff;
+h1 {
+  background-color: #787878;
+}
+div.App {
+  background-color: #2B2B2B;
 }
 
-li.tab-list-active {
-  background-color: #242424;
+div.Inner {
+  background-color: #787878;
+  padding: 10px 50px 25px 50px;
+  margin-left: 25px;
+  margin-top: 25px;
+  margin-right: 25px;
 }
 
 ol.tab-list {
-  background-color: lightslategrey;
+  background-color: #3B3F42;
+  border-top-style: solid;
+  border-color: #2B2B2B;
+  border-top: 1px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border-bottom: 0;
+}
+
+li {
+  border-radius: 5px 5px 0 0;
+}
+
+li.tab-list-item {
+  background-color: #787878;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+li.tab-list-active {
+  background-color: #787878;
+}
+
+div.Dropdown-control {
+  width: 7%;
+}
+
+div.is-open {
+  width: 7%;
 }
 
 td {
@@ -57,4 +91,16 @@ td {
   width: 1000px;
   text-align: center;
   padding-top: 50px;
+}
+
+ul.Button {
+  position: relative;
+  left: 80%;
+}
+
+li.Button {
+  background-color: #787878;
+  border-style: solid;
+  border-color: #2B2B2B;
+  border-bottom-width: 2px;
 }
