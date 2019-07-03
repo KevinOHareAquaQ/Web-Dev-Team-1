@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Dropdown from 'react-dropdown'
 import AreaChart from "./Chart";
-import icon from "./red_led.png";
+import icon from "./green_led.gif";
 
 const options = [
     'AAPL', 'AIG', 'AMD','DELL','DOW','GOOG','HPQ','IBM','INTC','MSFT'
@@ -37,7 +37,7 @@ class DropMenu extends Component {
                 </div>
 
                 <div label="chart">
-                    <img src={icon} className="red_led" alt="icon" />
+                    <img src={icon} className="green_led"/>
                     <h1 className="x-axis-text">Running average price of {Sym_name}</h1>
                     <div className="row">
                         <div className="left">

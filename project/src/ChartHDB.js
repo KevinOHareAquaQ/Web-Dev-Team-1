@@ -70,7 +70,7 @@ class AreaChartHDB extends React.Component {
         const startdate=this.state.day;
 
 //        this.getData("{[symb;window;t;sd;ed]select x,window mdev y from (select y:avg price by x:((1 xbar time.date)+ t xbar time.minute) from trade where date within (sd;ed),sym=symb)}[`"+Sym_Name+";100;15;"+startdate+";.z.d]")
-        this.getData("{[symb;t;sd;ed]select y:dev price by x:date+t xbar time.minute from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";60;"+startdate+";.z.d]")
+        this.getData("{[symb;t;sd;ed]select y:dev price by x:date+t xbar time.minute from trade where date within (sd;ed),sym=symb}[`"+Sym_Name+";15;"+startdate+";.z.d]")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
@@ -100,50 +100,75 @@ class AreaChartHDB extends React.Component {
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
+
                 <div><Grid_Button onSelectDay={this.handleSelect}/>
-                <ChartCanvas ratio={ratio} width={1000} height={400}
-                             margin={{left: 100, right: 50, top: 50, bottom: 30}}
-                             seriesName="MSFT"
-                             data={data} type={type}
-                             xAccessor={d => d.x}
-                             xScale={xScaleSetter}
-//                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
-                >
 
-                    <Chart id={0} yExtents={d => d.y}>
-                        <defs>
-                            <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
-                                <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
-                                <stop offset="70%" stopColor="#6fa4fc" stopOpacity={0.0}/>
-                                <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
-                            </linearGradient>
-                        </defs>
-                        <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
-                        <YAxis axisAt="left" orient="left" stroke="#000000"/>
+                <h1 className="min-price-text">Sym Volatility by date</h1>
 
-                        <MouseCoordinateX
-                            at="bottom"
-                            orient="bottom"
-                            displayFormat={timeFormat("%H:%M")} />
-                        <MouseCoordinateY
-                            at="left"
-                            orient="left"
-                            displayFormat={format(".2f")} />
+                <div className="row">
 
-                        <AreaSeries
-                            yAccessor={d => data.y}
-                            fill="url(#MyGradient)"
-                            strokeWidth={2}
-                            interpolation={curveMonotoneX}
-                            canvasGradient={canvasGradient}
-                        />  <LineSeries yAccessor={data => data.y}  strokeWidth={3} stroke={"#4fb5ff"}/>
+                    <div className="left">
+                        <h1 className="h-text">Volatility</h1>
+                    </div>
+
+                    {/*<AreaChartHDB sym={Sym_name}/>*/}
+
+                    <ChartCanvas ratio={ratio} width={1000} height={400}
+                                 margin={{left: 100, right: 50, top: 50, bottom: 30}}
+                                 seriesName="MSFT"
+                                 data={data} type={type}
+                                 xAccessor={d => d.x}
+                                 xScale={xScaleSetter}
+                        //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
+                    >
+
+                        <Chart id={0} yExtents={d => [1.25*d.y, 0.75*d.y]}>
+                            <defs>
+                                <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
+                                    <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
+                                    <stop offset="70%" stopColor="#6fa4fc" stopOpacity={0.0}/>
+                                    <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
+                                </linearGradient>
+                            </defs>
+                            <XAxis axisAt="bottom" orient="bottom" ticks={6}/>
+                            <YAxis axisAt="left" orient="left" stroke="#000000"/>
+
+                            <MouseCoordinateX
+                                at="bottom"
+                                orient="bottom"
+                                displayFormat={timeFormat("%H:%M")} />
+                            <MouseCoordinateY
+                                at="left"
+                                orient="left"
+                                displayFormat={format(".2f")} />
+
+                            <AreaSeries
+                                yAccessor={d => data.y}
+                                fill="url(#MyGradient)"
+                                strokeWidth={2}
+                                interpolation={curveMonotoneX}
+                                canvasGradient={canvasGradient}
+                            />  <LineSeries yAccessor={data => data.y}  strokeWidth={3} stroke={"#4fb5ff"}/>
 
 
-                    </Chart>
+                        </Chart>
 
-                    <CrossHairCursor />
+                        <CrossHairCursor />
 
-                </ChartCanvas>
+                    </ChartCanvas>
+
+
+
+                </div>
+
+
+                    <div className="x-axis-text">
+                        <h1 className="x-axis-text">Time</h1>
+                    </div>
+
+
+
+
                 </div>
             );
         }

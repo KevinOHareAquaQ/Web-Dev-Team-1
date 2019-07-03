@@ -63,7 +63,7 @@ class AreaChart extends React.Component {
     
     updateData() {
         const Sym_Name=this.props.sym;
-        this.getData("select x:time,y:avgs price,open:prev avgs price,close:avgs price,volume:avgs size from trade where sym=`"+Sym_Name+",((rank price) mod 5)=0")
+        this.getData("select x:time,y:avgs price,open:prev avgs price,close:avgs price,volume:avgs size from trade where sym=`"+Sym_Name+",((rank price) mod 10)=0")
         //this.getData("select x:time,y:avgs price from trade where ((rank price) mod 5)=0,sym=`"+Sym_Name)
             .then(data => {
                 if (data.success) {
@@ -87,7 +87,9 @@ class AreaChart extends React.Component {
     render() {
        
         if (this.state.rowData === undefined || this.state.rowData.length==0) {
+
             return <div>Loading...</div>
+
         } else {        
 
             const {type, width, ratio} = this.props;
@@ -121,7 +123,7 @@ class AreaChart extends React.Component {
                                    widthRatio={1} />
                     </Chart>
 
-                    <Chart id={0} yExtents={d => d.y}>
+                    <Chart id={0} yExtents={d => [1.1*d.y, 0.9*d.y]}>
 
                         <defs>
                             <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">

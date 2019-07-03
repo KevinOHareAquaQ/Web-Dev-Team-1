@@ -49,7 +49,6 @@ function App() {
             <div label="HDB">
 
                 <div className="Inner">
-                <h1 className="min-price-text">Sym Volatility by date (select start and end time)</h1>
                 <DropMenuHDB/>
                 </div>
                 <div className="Inner">
