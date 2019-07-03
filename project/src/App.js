@@ -13,6 +13,7 @@ import HDBGrid2 from "./hdbweeksym";
 import HDBCOUNTSWEEK from "./hdbweekcountsgraph";
 import Grid_Button from "./Button";
 import BarChart from "./Barchart";
+import AreaChartHDB from "./ChartHDB";
 
 require('./index.css');
 
@@ -50,7 +51,8 @@ function App() {
 
                 <div className="Inner">
                 <h1 className="min-price-text">Sym Volatility by date (select start and end time)</h1>
-                <DropMenuHDB/>
+                {/*<DropMenuHDB/>*/}
+                <AreaChartHDB />
                 </div>
                 <div className="Inner">
                 <h1 className="min-price-text">Max volume traded per day (previous week)</h1>

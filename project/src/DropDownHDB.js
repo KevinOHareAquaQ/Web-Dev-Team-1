@@ -6,7 +6,7 @@ const optionssym = [
     'AAPL', 'AIG', 'AMD','DELL','DOW','GOOG','HPQ','IBM','INTC','MSFT'
 ]
 
-class DropMenuHDB extends Component {
+export class DropMenuHDB extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -17,8 +17,9 @@ class DropMenuHDB extends Component {
     }
 
     _onSelectSym (option) {
-        console.log('You selected ', option.label)
+        //console.log('You selected ', option.label)
         this.setState({selectedsym: option})
+        this.props.onSelectSym(option.label)
     }
 
     render () {
@@ -31,11 +32,11 @@ class DropMenuHDB extends Component {
                 <h3>Select Symbol </h3>
                 <Dropdown options={optionssym} onChange={this._onSelectSym} value={defaultOptionsym} Message="Select  sym" />
 
-                <div label="chart">
-                    <AreaChartHDB
-                    sym={Sym_name}
-                    />
-                </div>
+                {/*<div label="chart">*/}
+                {/*    <AreaChartHDB*/}
+                {/*    sym={Sym_name}*/}
+                {/*    />*/}
+                {/*</div>*/}
 
                </section>
         )

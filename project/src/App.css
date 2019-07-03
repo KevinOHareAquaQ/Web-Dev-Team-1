@@ -97,8 +97,9 @@ td {
 }
 
 ul.Button {
-  position: relative;
+  position: absolute;
   left: 80%;
+  top: 40%;
 }
 
 li.Button {

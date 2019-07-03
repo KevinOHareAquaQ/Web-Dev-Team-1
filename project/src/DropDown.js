@@ -18,8 +18,9 @@ class DropMenu extends Component {
     }
 
     _onSelect (option) {
-        console.log('You selected ', option.label)
+        //console.log('You selected ', option.label)
         this.setState({selected: option})
+        this.props.onSelectSym(option.label)
     }
 
     render () {

@@ -10,6 +10,7 @@ import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/u
 import axios from 'axios';
 import { LineSeries } from "react-stockcharts/lib/series";
 import Grid_Button from "./Button"
+import DropMenuHDB from "./DropDownHDB"
 import { format } from "d3-format";
 import { timeFormat } from "d3-time-format";
 import {
@@ -27,19 +28,24 @@ const canvasGradient = createVerticalLinearGradient([
     { stop: 1, color: hexToRGBA("#4286f4", 0.8) },
 ]);
 
-class AreaChartHDB extends React.Component {
+export class AreaChartHDB extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             rowData: [],
-            day:'.z.d-1'
+            day:'.z.d-1',
+            sym:'AAPL'
         }
         this.updateData();
     }
 
     handleSelect = (selectValue) => {
         this.setState({day:selectValue},()=>this.updateData());
+    }
+
+    symSelect = (selectValue) => {
+        this.setState({sym:selectValue},()=>this.updateData());
     }
 
     options = {
@@ -66,7 +72,7 @@ class AreaChartHDB extends React.Component {
     };
     
     updateData() {
-        const Sym_Name=this.props.sym;
+        const Sym_Name=this.state.sym;
         const startdate=this.state.day;
 
 //        this.getData("{[symb;window;t;sd;ed]select x,window mdev y from (select y:avg price by x:((1 xbar time.date)+ t xbar time.minute) from trade where date within (sd;ed),sym=symb)}[`"+Sym_Name+";100;15;"+startdate+";.z.d]")
@@ -94,13 +100,14 @@ class AreaChartHDB extends React.Component {
 
         if (this.state.rowData === undefined || this.state.rowData.length==0) {
             return <div>Loading...</div>
-        } else {        
+        } else {
 
             const {type, width, ratio} = this.props;
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
-                <div><Grid_Button onSelectDay={this.handleSelect}/>
+
+                <div><DropMenuHDB onSelectSym={this.symSelect}/><Grid_Button onSelectDay={this.handleSelect}/>
                 <ChartCanvas ratio={ratio} width={1000} height={400}
                              margin={{left: 100, right: 50, top: 50, bottom: 30}}
                              seriesName="MSFT"
