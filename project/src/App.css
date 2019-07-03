@@ -17,6 +17,7 @@ div.Inner {
   margin-left: 25px;
   margin-top: 25px;
   margin-right: 25px;
+  border-radius: 25px;
 }
 
 ol.tab-list {
@@ -58,9 +59,11 @@ td {
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 6s linear;
+  animation: App-logo-spin infinite 100000s linear;
   height: 10vmin;
   pointer-events: none;
+  position: relative;
+  left: 5px;
 }
 
 .App-header {
