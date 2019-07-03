@@ -9,7 +9,7 @@ import { fitWidth } from "react-stockcharts/lib/helper";
 import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
 import axios from 'axios';
 import { LineSeries } from "react-stockcharts/lib/series";
-
+import DropMenu from "./DropDown"
 import { format } from "d3-format";
 import { timeFormat } from "d3-time-format";
 import {
@@ -20,6 +20,8 @@ import {
 
 import { SingleValueTooltip } from "react-stockcharts/lib/tooltip";
 import { last } from "react-stockcharts/lib/utils";
+import DropMenuHDB from "./DropDownHDB";
+import icon from "./green_led.gif";
 
 const canvasGradient = createVerticalLinearGradient([
     { stop: 0, color: hexToRGBA("#b5d0ff", 0.2) },
@@ -27,15 +29,19 @@ const canvasGradient = createVerticalLinearGradient([
     { stop: 1, color: hexToRGBA("#4286f4", 0.8) },
 ]);
 
-class AreaChart extends React.Component {
+export class AreaChart extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             rowData: [],
-            sym:this.props.sym
+            sym:'AAPL'
         }
        this.updateData();
+    }
+
+    symSelect = (selectValue) => {
+        this.setState({sym:selectValue},()=>this.updateData());
     }
 
     options = {
@@ -62,7 +68,7 @@ class AreaChart extends React.Component {
     };
     
     updateData() {
-        const Sym_Name=this.props.sym;
+        const Sym_Name=this.state.sym;
         this.getData("select x:time,y:avgs price,open:prev avgs price,close:avgs price,volume:avgs size from trade where sym=`"+Sym_Name+",((rank price) mod 10)=0")
         //this.getData("select x:time,y:avgs price from trade where ((rank price) mod 5)=0,sym=`"+Sym_Name)
             .then(data => {
@@ -96,6 +102,15 @@ class AreaChart extends React.Component {
             const data = this.state.rowData;
             let xScaleSetter = scaleTime();
             return (
+                <div>
+                    <DropMenuHDB onSelectSym={this.symSelect}/>
+                    <div label="chart">
+                        {/*<img src={icon} className="green_led"/>*/}
+                        <h1 className="x-axis-text">Running average price of {this.state.sym}</h1>
+                        <div className="row">
+                            <div className="left">
+                                <h1 className="h-text">Average price</h1>
+                            </div>
 
                 <ChartCanvas ratio={ratio} width={1000} height={400}
                              margin={{left: 100, right: 50, top: 50, bottom: 20}}
@@ -161,6 +176,10 @@ class AreaChart extends React.Component {
                     <CrossHairCursor />
 
                 </ChartCanvas>
+                        </div>
+                        <h1 className="x-axis-text">Time</h1>
+                    </div>
+                </div>
             );
         }
     }

@@ -14,6 +14,7 @@ import HDBCOUNTSWEEK from "./hdbweekcountsgraph";
 import Grid_Button from "./Button";
 import BarChart from "./Barchart";
 import AreaChartHDB from "./ChartHDB";
+import AreaChart from "./Chart"
 
 require('./index.css');
 
@@ -32,7 +33,8 @@ function App() {
 
                 {/*<h1>Price (Running average)</h1>*/}
                 <div className="Inner">
-                <DropMenu/>
+                {/*<DropMenu/>*/}
+                <AreaChart />
                 </div>
                 <div className="Inner">
                 <h1 className="min-price-text">Min price/Max price/LVC per sym</h1>

@@ -20,7 +20,7 @@ class DropMenu extends Component {
     _onSelect (option) {
         //console.log('You selected ', option.label)
         this.setState({selected: option})
-        //this.props.onSelectSym(option.label)
+        this.props.onSelectSym(option.label)
     }
 
     render () {
@@ -37,17 +37,17 @@ class DropMenu extends Component {
                     {/*Current Sym is <strong> {Sym_name} </strong>*/}
                 </div>
 
-                <div label="chart">
-                    <img src={icon} className="green_led"/>
-                    <h1 className="x-axis-text">Running average price of {Sym_name}</h1>
-                    <div className="row">
-                        <div className="left">
-                            <h1 className="h-text">Average price</h1>
-                        </div>
-                        <AreaChart sym={Sym_name}/>
-                    </div>
-                    <h1 className="x-axis-text">Time</h1>
-                </div>
+                {/*<div label="chart">*/}
+                {/*    <img src={icon} className="green_led"/>*/}
+                {/*    <h1 className="x-axis-text">Running average price of {Sym_name}</h1>*/}
+                {/*    <div className="row">*/}
+                {/*        <div className="left">*/}
+                {/*            <h1 className="h-text">Average price</h1>*/}
+                {/*        </div>*/}
+                {/*        <AreaChart sym={Sym_name}/>*/}
+                {/*    </div>*/}
+                {/*    <h1 className="x-axis-text">Time</h1>*/}
+                {/*</div>*/}
 
             </section>
         )
