@@ -74,6 +74,7 @@ li:hover {
 
 .left {
     padding-left: 2%;
+    padding-right: 15px;
     width: 50%;
     height: 50%;
     position: relative;
@@ -84,7 +85,7 @@ li:hover {
 
 .left .h-text {
     height: 10px;
-    width: 250px;
+    width: 200px;
     text-align: center;
     position: absolute;
     transform: rotate(-90deg);
