@@ -103,7 +103,7 @@ export class AreaChart extends React.Component {
             let xScaleSetter = scaleTime();
             return (
                 <div>
-                    <DropMenu onSelectSym={this.symSelect}/>
+                    <DropMenuHDB onSelectSym={this.symSelect}/>
                     <div label="chart">
                         {/*<img src={icon} className="green_led"/>*/}
                         <h1 className="x-axis-text">Running average price of {this.state.sym}</h1>

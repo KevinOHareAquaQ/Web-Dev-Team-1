@@ -1,6 +1,7 @@
 header {
   text-align: center;
   background-color: #2B2B2B;
+  background-image: linear-gradient(to bottom right, #2B2B2B, #48657a);
 }
 
 h1 {
