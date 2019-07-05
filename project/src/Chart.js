@@ -134,7 +134,7 @@ export class AreaChart extends React.Component {
                             displayFormat={format(".4s")} />
 
                         <BarSeries yAccessor={d => d.volume}
-                                   stroke fill={(d) => d.close > d.open ? "orange" : "orange"}
+                                   stroke fill={(d) => d.close > d.open ? "#8cff82" : "#ff8282"}
                                    widthRatio={1} />
                     </Chart>
 
@@ -168,7 +168,10 @@ export class AreaChart extends React.Component {
 
                         />  <LineSeries yAccessor={data => data.y}    strokeWidth={3} stroke={"#4fb5ff"}/>
 
+
                     </Chart>
+
+
 
                     <CrossHairCursor />
 
