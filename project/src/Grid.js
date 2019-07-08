@@ -55,6 +55,23 @@ class Grid extends Component {
             }
     };
 
+    arrowCreate(data) {
+        var i = 0;
+        for (i; i < data.length; i++) {
+            if (data[i].colour === "green") {
+                data[i].lvc[0] = (data[i].lvc[0] + " \u2bc5");
+            } else if (data[i].colour === "red") {
+                data[i].lvc[0] = (data[i].lvc[0] + " \u2bc6");
+
+            }
+            else if (data[i].colour === "same") {
+                data[i].lvc[0] = (data[i].lvc[0] + " =");
+
+            }
+        }
+        return data
+    }
+
     getData(query) {
         this.options['data'] = { 'query': query, 'response': 'true', 'type': 'sync'};
         return axios(this.options)
@@ -66,7 +83,7 @@ class Grid extends Component {
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");
-                    this.setState({rowData: data.result});
+                    this.setState({ rowData: this.arrowCreate(data.result) });
                 }
             });
     }
