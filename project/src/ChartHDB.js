@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { scaleTime} from "d3-scale";
+import { scaleTime } from "d3-scale";
 import { curveMonotoneX } from "d3-shape";
 import { ChartCanvas, Chart } from "react-stockcharts";
 import { BarSeries, AreaSeries } from "react-stockcharts/lib/series";
@@ -141,7 +141,7 @@ export class AreaChartHDB extends React.Component {
                                  data={data} type={type}
                                  xAccessor={d => d.x}
                                  xScale={xScaleSetter}
-                        //                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
+                                 //xExtents={[new Date(this.state.day), new Date(this.state.day)]}
                     >
 
                         <Chart id={0} yExtents={d => [1.25*d.y, 0.75*d.y]}>
@@ -172,17 +172,13 @@ export class AreaChartHDB extends React.Component {
                                 canvasGradient={canvasGradient}
                             />  <LineSeries yAccessor={data => data.y}  strokeWidth={3} stroke={"#4fb5ff"}/>
 
-
                         </Chart>
 
                         <CrossHairCursor />
 
                     </ChartCanvas>
 
-
-
                 </div>
-
 
                     <div className="x-axis-text">
                         <h2 className="x-axis-text">Time</h2>
