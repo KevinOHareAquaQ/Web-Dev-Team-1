@@ -30,9 +30,9 @@ export class DropMenuHDB extends Component {
 
         return (
 
-            <section>
+            <section className="dropdownhdb">
 
-                <h3>Select Symbol</h3>
+                <h3>Select Symbol:</h3>
 
                 <Dropdown options={optionssym} onChange={this._onSelectSym} value={defaultOptionsym} Message="Select sym" />
 

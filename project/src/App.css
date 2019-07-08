@@ -19,13 +19,7 @@ div.Inner {
   margin-right: 25px;
   border-radius: 25px;
 }
-
-section.dropdownfloat {
-    float: right; 
-    top: 40%;
-
-}
-
+ 
 ol.tab-list {
   background-color: #3B3F42;
   border-top-style: solid;
@@ -44,18 +38,11 @@ li.tab-list-item {
   background-color: #787878;
   color: #ffffff;
   margin-bottom: 0;
+  padding: 10px 20px 10px 20px;
 }
 
 li.tab-list-active {
   background-color: #787878;
-}
-
-div.Dropdown-control {
-  width: 7%;
-}
-
-div.is-open {
-  width: 7%;
 }
 
 td {
@@ -99,7 +86,6 @@ td {
 .min-price-text {
   width: 1000px;
   text-align: center;
-  padding-top: 50px;
 }
 
 ul.Button {
@@ -113,4 +99,16 @@ li.Button {
   border-style: solid;
   border-color: #2B2B2B;
   border-bottom-width: 2px;
+}
+
+section.dropdownrdb {
+    position:absolute;
+    right: 10%;
+
+}
+
+section.dropdownhdb {
+    position:absolute;
+    right: 10%;
+    bottom: 15%;
 }

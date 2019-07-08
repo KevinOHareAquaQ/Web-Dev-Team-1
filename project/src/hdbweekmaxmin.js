@@ -50,7 +50,7 @@ class HDBGrid extends Component {
     }
 
     updateData() {
-        this.getData("select maxdate:last date,maxcount:last x,mindate:first date,mincount:first x from (asc select count i by date from trade where date within (`week$-1+`week$.z.d;5+`week$-1+`week$.z.d))")
+        this.getData("select maxdate:last date,maxcount:last x,mindate:first date,mincount:first x from (asc select count i by date from trade where date within (`week$-1+`week$.z.d;6+`week$-1+`week$.z.d))")
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");

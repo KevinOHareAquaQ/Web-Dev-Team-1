@@ -45,7 +45,7 @@ class HDBGrid2 extends Component {
     }
 
     updateData() {
-        this.getData("asc select count i by sym from trade where date>.z.d-7") //alternative date for exact last working week (mon-fri last week): where date within (`week$-1+`week$.z.d;5+`week$-1+`week$.z.d)
+        this.getData("asc select count i by sym from trade where date within (`week$-1+`week$.z.d;6+`week$-1+`week$.z.d)") //alternative date for exact last working week (mon-fri last week): where date within (`week$-1+`week$.z.d;5+`week$-1+`week$.z.d)
             .then(data => {
                 if (data.success) {
                     console.log("data success=true");

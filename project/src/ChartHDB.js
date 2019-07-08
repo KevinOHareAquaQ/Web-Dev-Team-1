@@ -123,7 +123,7 @@ export class AreaChartHDB extends React.Component {
             let xScaleSetter = scaleTime();
             return (
 
-                <div><DropMenuHDB onSelectSym={this.symSelect}/><Grid_Button onSelectDay={this.handleSelect}/>
+                <div>
 
                 <h1 className="min-price-text">Volatility of {this.state.sym}</h1>
 
@@ -183,7 +183,7 @@ export class AreaChartHDB extends React.Component {
                     <div className="x-axis-text">
                         <h2 className="x-axis-text">Time</h2>
                     </div>
-
+                    <DropMenuHDB onSelectSym={this.symSelect} /><Grid_Button onSelectDay={this.handleSelect} />
                 </div>
             );
         }
