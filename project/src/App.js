@@ -24,7 +24,7 @@ function App() {
     <div className="App">
 
         <header>
-            <img src={logo} className="App-logo" alt="logo" />
+              {/*<img src={logo} className="App-logo" alt="logo" />*/}
         </header>
 
         <Tabs>
@@ -52,7 +52,6 @@ function App() {
             <div label="HDB">
 
                 <div className="Inner">
-                <h1 className="min-price-text">Sym Volatility by date (select start and end time)</h1>
                 <AreaChartHDB />
                 </div>
                 <div className="Inner">
