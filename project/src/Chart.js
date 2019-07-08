@@ -109,7 +109,7 @@ export class AreaChart extends React.Component {
                         <h1 className="x-axis-text">Running average price of {this.state.sym}</h1>
                         <div className="row">
                             <div className="left">
-                                <h1 className="h-text">Average price</h1>
+                                <h2 className="h-text">Average price</h2>
                             </div>
 
                 <ChartCanvas ratio={ratio} width={1000} height={400}
@@ -174,7 +174,7 @@ export class AreaChart extends React.Component {
 
                 </ChartCanvas>
                         </div>
-                        <h1 className="x-axis-text">Time</h1>
+                        <h2 className="x-axis-text">Time</h2>
                     </div>
                 </div>
             );
