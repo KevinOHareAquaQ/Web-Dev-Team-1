@@ -24,7 +24,7 @@ function App() {
     <div className="App">
 
         <header>
-            <img src={logo} className="App-logo" alt="logo" />
+              {/*<img src={logo} className="App-logo" alt="logo" />*/}
         </header>
 
         <Tabs>
@@ -45,6 +45,7 @@ function App() {
                 <Maxvolchart />
                 </div>
                 <div className="Inner">
+                    <h1 className="min-price-text">Volume traded by sym</h1>
                 <BarChart />
                 </div>
             </div>
@@ -52,11 +53,10 @@ function App() {
             <div label="HDB">
 
                 <div className="Inner">
-                <h1 className="min-price-text">Sym Volatility by date (select start and end time)</h1>
                 <AreaChartHDB />
                 </div>
                 <div className="Inner">
-                <h1 className="min-price-text">Max volume traded per day (previous week)</h1>
+                <h1 className="min-price-text">Max/Min volume traded per day (previous week)</h1>
                 <HDBGrid />
                 </div>
                 <div className="Inner">
@@ -64,6 +64,7 @@ function App() {
                 <HDBGrid2 />
                 </div>
                 <div className="Inner">
+                    <h1 className="x-axis-text">Total Volume Traded Per Day (Previous Week)</h1>
                 <HDBCOUNTSWEEK />
                 </div>
             </div>
