@@ -107,75 +107,89 @@ export class AreaChart extends React.Component {
                     <div label="chart">
                         {/*<img src={icon} className="green_led"/>*/}
                         <h1 className="x-axis-text">Running average price of {this.state.sym}</h1>
+
+
+
                         <div className="row">
+
                             <div className="left">
                                 <h2 className="h-text">Average price</h2>
                             </div>
 
-                <ChartCanvas ratio={ratio} width={1000} height={400}
-                             margin={{left: 100, right: 50, top: 50, bottom: 20}}
-                             seriesName="MSFT"
-                             data={data} type={type}
-                             xAccessor={d => d.x}
-                             xScale={xScaleSetter}
+                            <ChartCanvas ratio={ratio} width={1000} height={400}
+                                margin={{left: 100, right: 50, top: 50, bottom: 20}}
+                                seriesName="MSFT"
+                                data={data} type={type}
+                                xAccessor={d => d.x}
+                                xScale={xScaleSetter}
+                                //xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
+                            >
 
-//                             xExtents={[new Date(2019, 5, 24), new Date(2019, 5, 25)]}
-                >
-                    <Chart id={2}
-                           yExtents={d => d.volume}
-                           height={150} origin={(w, h) => [0, h - 150]}
+                                <Chart id={2}
+                                    yExtents={d => d.volume}
+                                    height={150} origin={(w, h) => [0, h - 150]}>
 
-                    >
-                        <YAxis axisAt="right" orient="right" ticks={2} tickFormat={format(".4s")} stroke="#000000"/>
+                                <YAxis axisAt="right" orient="right" ticks={2} tickFormat={format(".4s")} stroke="#000000"/>
 
-                        <MouseCoordinateY
-                            at="right"
-                            orient="right"
-                            displayFormat={format(".4s")} />
+                                <MouseCoordinateY
+                                    at="right"
+                                    orient="right"
+                                    displayFormat={format(".4s")} />
 
-                        <BarSeries yAccessor={d => d.volume}
+                                <BarSeries yAccessor={d => d.volume}
                                    stroke fill={(d) => d.close > d.open ? "orange" : "orange"}
                                    widthRatio={1} />
-                    </Chart>
 
-                    <Chart id={0} yExtents={d => [1.1*d.y, 0.9*d.y]}>
+                                </Chart>
 
-                        <defs>
-                            <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
-                                <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
-                                <stop offset="70%" stopColor="#6fa4fc" stopOpacity={0.0}/>
-                                <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
-                            </linearGradient>
-                        </defs>
-                        <XAxis axisAt="bottom" orient="bottom" ticks={6} text="XAxis Label here"/>
-                        <YAxis axisAt="left" orient="left" stroke="#000000"/>
+                                <Chart id={0} yExtents={d => [1.1*d.y, 0.9*d.y]}>
 
-                        <MouseCoordinateX
-                            at="bottom"
-                            orient="bottom"
-                            displayFormat={timeFormat("%H:%M")} />
-                        <MouseCoordinateY
-                            at="left"
-                            orient="left"
-                            displayFormat={format(".2f")} />
+                                    <defs>
+                                        <linearGradient id="MyGradient" x1="0" y1="100%" x2="0" y2="0%">
+                                        <stop offset="0%" stopColor="#b5d0ff" stopOpacity={0.0}/>
+                                        <stop offset="70%" stopColor="#6fa4fc" stopOpacity={0.0}/>
+                                        <stop offset="100%" stopColor="#4286f4" stopOpacity={0.0}/>
+                                        </linearGradient>
+                                    </defs>
 
-                        <AreaSeries
-                            yAccessor={d => data.y}
-                            fill="url(#MyGradient)"
-                            strokeWidth={5}
-                            interpolation={curveMonotoneX}
-                            canvasGradient={canvasGradient}
+                                    <XAxis axisAt="bottom" orient="bottom" ticks={6} text="XAxis Label here"/>
+                                    <YAxis axisAt="left" orient="left" stroke="#000000"/>
 
-                        />  <LineSeries yAccessor={data => data.y}    strokeWidth={3} stroke={"#4fb5ff"}/>
+                                    <MouseCoordinateX
+                                        at="bottom"
+                                        orient="bottom"
+                                        displayFormat={timeFormat("%H:%M")} />
 
-                    </Chart>
+                                    <MouseCoordinateY
+                                        at="left"
+                                        orient="left"
+                                        displayFormat={format(".2f")} />
 
-                    <CrossHairCursor />
+                                    <AreaSeries
+                                        yAccessor={d => data.y}
+                                        fill="url(#MyGradient)"
+                                        strokeWidth={5}
+                                        interpolation={curveMonotoneX}
+                                        canvasGradient={canvasGradient} />
 
-                </ChartCanvas>
-                        </div>
-                        <h2 className="x-axis-text">Time</h2>
-                    </div>
+                                    <LineSeries yAccessor={data => data.y}    strokeWidth={3} stroke={"#4fb5ff"}/>
+
+                                </Chart>
+
+                                <CrossHairCursor />
+
+                            </ChartCanvas>
+
+                            <div className="left">
+                                <h2 className="h-text2">Average size</h2>
+                            </div>
+
+                            </div>
+                                <h2 className="x-axis-text">Time</h2>
+                            </div>
+
+
+
                 </div>
             );
         }
