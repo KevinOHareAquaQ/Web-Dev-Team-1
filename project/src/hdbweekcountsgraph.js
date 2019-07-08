@@ -92,7 +92,7 @@ class HDBCOUNTSWEEK extends React.Component {
 
                 <section>
 
-                    <h1 className="x-axis-text">Total Volume Traded Per Day (Previous Week)</h1>
+                    {/*<h1 className="x-axis-text">Total Volume Traded Per Day (Previous Week)</h1>*/}
                     <div label="chart">
                         <div className="row">
                             <div className="left">
