@@ -29,7 +29,7 @@ class DropMenu extends Component {
 
         return (
 
-            <section>
+            <section className='dropdownfloat'>
 
                 <h3>Select Symbol </h3>
                 <Dropdown options={options} onChange={this._onSelect} value={defaultOption} Message="Select  sym" />

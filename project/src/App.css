@@ -20,6 +20,12 @@ div.Inner {
   border-radius: 25px;
 }
 
+section.dropdownfloat {
+    float: right; 
+    top: 40%;
+
+}
+
 ol.tab-list {
   background-color: #3B3F42;
   border-top-style: solid;
