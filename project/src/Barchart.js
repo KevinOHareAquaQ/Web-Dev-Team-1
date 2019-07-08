@@ -64,7 +64,7 @@ class BarChart extends React.Component {
 
                 <section>
 
-                    <h1 className="x-axis-text">Volume Traded by Sym</h1>
+                    {/*<h1 className="x-axis-text">Volume Traded by Sym</h1>*/}
                     <div label="chart">
                         <div className="row">
                             <div className="left">

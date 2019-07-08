@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb4efc49-7cde-4198-9837-8f58bd627162" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/src/green_led.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/red_led.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/App.css" afterDir="false" />
+    <list default="true" id="fb4efc49-7cde-4198-9837-8f58bd627162" name="Default Changelist" comment="Orange volume bars">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/Barchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Barchart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Chart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/ChartHDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/ChartHDB.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/DropDown.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DropDown.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/DropDown.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DropDown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Maxvolchart.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Maxvolchart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/hdbweekcountsgraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/hdbweekcountsgraph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/hdbweekmaxmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/hdbweekmaxmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/hdbweeksym.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/hdbweeksym.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,59 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/App.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/hdbweeksym.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/Tabs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/Button.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/ChartHDB.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="72" column="151" selection-start-line="72" selection-start-column="151" selection-end-line="72" selection-end-column="151" />
+            <state relative-caret-position="272">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -92,45 +36,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/Tab.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/Chart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/Barchart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="54" column="82" selection-start-line="54" selection-start-column="82" selection-end-line="54" selection-end-column="82" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/hdbweekmaxmin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -159,10 +68,8 @@
         <option value="$PROJECT_DIR$/project/src/logo.js" />
         <option value="$PROJECT_DIR$/project/src/optionsburger.js" />
         <option value="$PROJECT_DIR$/project/src/App.css" />
-        <option value="$PROJECT_DIR$/project/src/Barchart.js" />
         <option value="$PROJECT_DIR$/project/src/charts.js" />
         <option value="$PROJECT_DIR$/../Web-Dev-Team-1_Old/project/src/DropDown.js" />
-        <option value="$PROJECT_DIR$/project/src/DropDown.css" />
         <option value="$PROJECT_DIR$/project/src/Dropdown2.js" />
         <option value="$PROJECT_DIR$/project/src/utils.js" />
         <option value="$PROJECT_DIR$/project/src/DropDown.js" />
@@ -171,19 +78,24 @@
         <option value="$PROJECT_DIR$/../Livechart.js" />
         <option value="$PROJECT_DIR$/project/src/AnotherDrop.js" />
         <option value="$PROJECT_DIR$/project/package.json" />
-        <option value="$PROJECT_DIR$/project/src/Grid.js" />
-        <option value="$PROJECT_DIR$/project/src/Chart.js" />
-        <option value="$PROJECT_DIR$/project/src/ChartHDB.js" />
         <option value="$PROJECT_DIR$/project/src/Button.js" />
+        <option value="$PROJECT_DIR$/project/src/ChartHDB.js" />
+        <option value="$PROJECT_DIR$/project/src/DropDown.css" />
+        <option value="$PROJECT_DIR$/project/src/Barchart.js" />
+        <option value="$PROJECT_DIR$/project/src/hdbweekcountsgraph.js" />
+        <option value="$PROJECT_DIR$/project/public/index.html" />
+        <option value="$PROJECT_DIR$/project/src/Grid.js" />
+        <option value="$PROJECT_DIR$/project/src/hdbweekmaxmin.js" />
+        <option value="$PROJECT_DIR$/project/src/Chart.js" />
         <option value="$PROJECT_DIR$/project/src/App.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="323" />
+    <option name="y" value="63" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -209,6 +121,12 @@
               <item name="Web-Dev-Team-1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Web-Dev-Team-1" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web-Dev-Team-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web-Dev-Team-1" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -227,6 +145,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kevin.O'Hare\Documents\GitHub\Web-Dev-Team-1\project\public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Philip Hewitt\WebstormProjects\Web-Dev-Team-1\project\src" />
     </key>
@@ -274,6 +195,8 @@
       <workItem from="1561469907873" duration="1162000" />
       <workItem from="1561628636243" duration="875000" />
       <workItem from="1561629947587" duration="3253000" />
+      <workItem from="1562244270208" duration="3377000" />
+      <workItem from="1562258596735" duration="1483000" />
     </task>
     <task id="LOCAL-00001" summary="Monday 17th June 15:28&#10;&#10;Different Data sources for each tab. Drop down menu moved, table moved">
       <created>1560942012488</created>
@@ -296,11 +219,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561468250747</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Orange volume bars&#10;Thought it was y-axis that needed added to the line chart but it's actually a y-label&#10;Explorer tab and title changed">
+      <created>1562259277964</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562259277964</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65091000" />
+    <option name="totallyTimeSpent" value="71394000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -312,10 +242,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="710" y="-1094" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-837" y="18" width="697" height="735" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11959958" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38543248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -327,7 +256,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.17768148" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27242523" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -383,7 +312,8 @@
     <MESSAGE value="Monday 17th June 15:28&#10;&#10;Different Data sources for each tab. Drop down menu moved, table moved" />
     <MESSAGE value="Drop down Select added to live chart&#10;Cleaned up some files and removed unused files" />
     <MESSAGE value="Updated Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Version" />
+    <MESSAGE value="Orange volume bars&#10;Thought it was y-axis that needed added to the line chart but it's actually a y-label&#10;Explorer tab and title changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Orange volume bars&#10;Thought it was y-axis that needed added to the line chart but it's actually a y-label&#10;Explorer tab and title changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -413,13 +343,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/src/optionsburger.js" />
     <entry file="file://$PROJECT_DIR$/project/src/charts.js" />
-    <entry file="file://$PROJECT_DIR$/project/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -447,13 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.gitconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -466,27 +382,10 @@
     <entry file="file://$PROJECT_DIR$/../Web-Dev-Team-1_Old/project/src/App.js" />
     <entry file="file://$PROJECT_DIR$/../d3-stock-master/d3-stock-master/src/script.js" />
     <entry file="file://$PROJECT_DIR$/project/src/Dropdown2.js" />
-    <entry file="file://$PROJECT_DIR$/project/src/Barchart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="54" column="82" selection-start-line="54" selection-start-column="82" selection-end-line="54" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/AnotherDrop.js" />
     <entry file="file://$PROJECT_DIR$/../AnotherDrop.js" />
     <entry file="file://$PROJECT_DIR$/../Livechart.js" />
     <entry file="file://$PROJECT_DIR$/project/src/utils.js" />
-    <entry file="file://$PROJECT_DIR$/project/src/DropDown.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/Tabs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -513,16 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/Grid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/DropDown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10">
@@ -530,55 +419,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/ChartHDB.js">
+    <entry file="file://$PROJECT_DIR$/project/src/Button.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="72" column="151" selection-start-line="72" selection-start-column="151" selection-end-line="72" selection-end-column="151" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/Chart.js">
+    <entry file="file://$PROJECT_DIR$/project/src/Barchart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/hdbweekcountsgraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/hdbweeksym.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/hdbweekmaxmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/Maxvolchart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="952">
+          <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -587,25 +438,119 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/src/DropDownHDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="595">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/App.js">
+    <entry file="file://$PROJECT_DIR$/project/src/DropDown.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="1190">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/Button.js">
+    <entry file="file://$PROJECT_DIR$/project/src/ChartHDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        <state relative-caret-position="1360">
+          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/hdbweekcountsgraph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="94" column="99" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/public/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/Maxvolchart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/Grid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-344797">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/hdbweeksym.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="47" column="208" selection-start-line="47" selection-start-column="165" selection-end-line="47" selection-end-column="208" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/hdbweekmaxmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="56" column="56" lean-forward="true" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/Chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

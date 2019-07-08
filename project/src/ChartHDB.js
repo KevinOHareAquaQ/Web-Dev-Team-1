@@ -109,7 +109,7 @@ export class AreaChartHDB extends React.Component {
 
                 <div><DropMenuHDB onSelectSym={this.symSelect}/><Grid_Button onSelectDay={this.handleSelect}/>
 
-                <h1 className="min-price-text">Volatilityh of Sym</h1>
+                <h1 className="min-price-text">Volatility of {this.state.sym}</h1>
 
                 <div className="row">
 
