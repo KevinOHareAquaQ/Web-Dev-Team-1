@@ -7,6 +7,7 @@ header {
 h1 {
   background-color: #787878;
 }
+
 div.App {
   background-color: #2B2B2B;
 }
@@ -90,8 +91,8 @@ td {
 
 ul.Button {
   position: absolute;
-  top: 30%;
-  left: 80%;
+  top: 150px;
+  right: 5%;
 }
 
 li.Button {
@@ -109,6 +110,6 @@ section.dropdownrdb {
 
 section.dropdownhdb {
     position:absolute;
-    right: 10%;
-    bottom: 15%;
+    right: 5%;
+    top: 400px;
 }

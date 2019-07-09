@@ -56,17 +56,17 @@ function App() {
                 <AreaChartHDB />
                 </div>
                 <div className="Inner">
-                <h1 className="min-price-text">Max/Min volume traded per day (previous week)</h1>
-                <HDBGrid />
-                </div>
-                <div className="Inner">
                 <h1 className="min-price-text">Volume traded per sym (previous week)</h1>
                 <HDBGrid2 />
                 </div>
                 <div className="Inner">
                     <h1 className="x-axis-text">Total Volume Traded Per Day (Previous Week)</h1>
                 <HDBCOUNTSWEEK />
-                </div>
+                  </div>
+                  <div className="Inner">
+                      <h1 className="min-price-text">Max/Min volume traded per day (previous week)</h1>
+                      <HDBGrid />
+                  </div>
             </div>
 
         </Tabs>
